@@ -40,7 +40,7 @@ public class AdicionServiceImpl implements IAdicionService{
 		
 		Adicion adicionEncontrada = buscarAdicion(adicion.getNombre());
 		
-		String mensajeExito = null;
+		String mensajeExito;
 		
 		if(adicionEncontrada == null) {
 			Adicion adicionAGuardar = new Adicion(adicion.getNombre(), adicion.getDescripcion(), valor);
@@ -49,7 +49,14 @@ public class AdicionServiceImpl implements IAdicionService{
 			mensajeExito = MessageUtil.GUARDADO_EXITOSO_ADICION.getMensaje();
 			
 		}else {
-			//TODO Cuando se va actualizar alguna adicion
+			
+			adicionEncontrada.setNombre(adicion.getNombre());
+			adicionEncontrada.setDescripcion(adicion.getDescripcion());
+			adicionEncontrada.setValor(valor);
+			
+			adicionRepository.save(adicionEncontrada);
+			
+			mensajeExito = MessageUtil.ACTUALIZACION_EXITOSA_ADICION.getMensaje();		
 		}
 		
 		return mensajeExito;

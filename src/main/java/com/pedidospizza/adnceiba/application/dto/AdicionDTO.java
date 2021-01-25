@@ -11,7 +11,8 @@ public class AdicionDTO {
 	
 	public AdicionDTO() {}
 	
-	public AdicionDTO(String nombre, String descripcion, String valor) {		
+	public AdicionDTO(Long id, String nombre, String descripcion, String valor) {	
+		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.valor = valor;
@@ -19,7 +20,7 @@ public class AdicionDTO {
 	
 	public static AdicionDTO convertirEntidadADTO(Adicion adicion) {
 		String valor = Integer.toString(adicion.getValor());
-		return new AdicionDTO(adicion.getNombre(), adicion.getDescripcion(), valor);
+		return new AdicionDTO(adicion.getId(),adicion.getNombre(), adicion.getDescripcion(), valor);
 	}
 	
 	public Long getId() {
