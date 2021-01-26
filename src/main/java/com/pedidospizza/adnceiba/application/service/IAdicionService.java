@@ -1,6 +1,7 @@
 package com.pedidospizza.adnceiba.application.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.pedidospizza.adnceiba.application.dto.AdicionDTO;
 import com.pedidospizza.adnceiba.domain.entity.Adicion;
@@ -12,9 +13,11 @@ public interface IAdicionService {
 	
 	public String guardar(AdicionDTO adicion) throws Exception;
 	
-	public Adicion buscarAdicion(String nombre);
-	
-	public String eliminarAdicion(Long Id);
+	public void eliminarAdicion(Long id);
+
+	public Adicion buscarAdicionNombre(String nombre);
+
+	public Adicion  buscarAdicion(Long id);
 	
 }
 

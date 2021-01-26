@@ -2,6 +2,7 @@ package com.pedidospizza.adnceiba.application.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,8 +39,12 @@ public class AdicionServiceImpl implements IAdicionService{
 		
 		Integer valor = ValidatorUtil.validarValorDinero(adicion.getValor());
 		
-		Adicion adicionEncontrada = buscarAdicion(adicion.getNombre());
+		Adicion adicionEncontrada = null;
 		
+		if(adicion.getId() != null) {
+			adicionEncontrada = buscarAdicion(adicion.getId());
+		}
+				
 		String mensajeExito;
 		
 		if(adicionEncontrada == null) {
@@ -61,17 +66,22 @@ public class AdicionServiceImpl implements IAdicionService{
 		
 		return mensajeExito;
 	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Adicion buscarAdicion(Long id) {
+		return adicionRepository.findById(id).orElse(null);
+	}
 
 	@Override
 	@Transactional(readOnly = true)
-	public Adicion buscarAdicion(String nombre) {
+	public Adicion buscarAdicionNombre(String nombre) {
 		return adicionRepository.findBynombre(nombre);
 	}
 	
 
 	@Override
-	public String eliminarAdicion(Long Id) {
-		// TODO Auto-generated method stub
-		return null;
+	public void eliminarAdicion(Long id) {
+		adicionRepository.deleteById(id);
 	}
 }
