@@ -6,8 +6,8 @@ public enum MessageUtil {
 	VALOR_MENOR_CERO(2,"No es posible poner un valor menor a cero"),
 	GUARDADO_EXITOSO_ADICION(3, "Se ha guardado exitosamente una nueva adicion"), 
 	ACTUALIZACION_EXITOSA_ADICION(4, "Se ha actualizado exitosamente la adicion seleccionada"), 
-	ADICION_NO_EXISTENTE(5, "La adición buscada no existe"), 
-	ADICION_ELIMINADA_EXITOSAMENTE(6, "La adición seleccionada fue eliminada exitosamente");
+	ADICION_NO_EXISTENTE(5, "La adicion buscada no existe"), 
+	ADICION_ELIMINADA_EXITOSAMENTE(6, "La adicion seleccionada fue eliminada exitosamente");
 	
 	private final String mensaje;
 	

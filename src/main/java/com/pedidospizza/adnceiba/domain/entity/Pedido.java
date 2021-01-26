@@ -60,7 +60,7 @@ public class Pedido implements Serializable {
 	}
 	
 	public Date getFechaPedido() {
-		return fechaPedido.clone();
+		return (Date) fechaPedido.clone();
 	}
 
 	public void setFechaPedido(Date fechaPedido) {
