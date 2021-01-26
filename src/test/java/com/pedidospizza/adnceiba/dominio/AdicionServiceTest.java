@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.pedidospizza.adnceiba.application.dto.AdicionDTO;
 import com.pedidospizza.adnceiba.application.service.AdicionServiceImpl;
 import com.pedidospizza.adnceiba.application.service.IAdicionService;
+import com.pedidospizza.adnceiba.application.util.MessageUtil;
 import com.pedidospizza.adnceiba.domain.entity.Adicion;
 import com.pedidospizza.adnceiba.domain.repository.IAdicionRepository;
 
@@ -60,10 +62,45 @@ public class AdicionServiceTest {
     public void obtenerTodosTest() {
         Mockito.when(adicionRepository.findAll()).thenReturn(listaAdiciones);
         List<AdicionDTO> listaAdiciones = adicionService.obtenerAdiciones();
-        assertEquals(listaAdiciones.size(),2);
+        assertEquals(2,listaAdiciones.size());
         assertEquals(listaAdiciones.get(0).getNombre(),listaAdicionesDTO.get(0).getNombre());
         assertEquals(listaAdiciones.get(0).getDescripcion(),listaAdicionesDTO.get(0).getDescripcion());
         assertEquals(listaAdiciones.get(1).getValor(),listaAdicionesDTO.get(1).getValor());
+    }
+    
+    @Test
+    public void guardarAdicionValorCorrecto() throws Exception {
+
+        Adicion adicion = new Adicion("Jalapeño", "Ricos Jalapeños", 2000);
+        AdicionDTO adicionDTO = AdicionDTO.convertirEntidadADTO(adicion);
+
+        Mockito.when(adicionRepository.save(adicion)).thenReturn(null);
+        
+        String mensajeResultado = adicionService.guardar(adicionDTO);
+
+        assertEquals(MessageUtil.GUARDADO_EXITOSO_ADICION.getMensaje(),mensajeResultado);
+
+    }
+    
+    @Test
+    public void actualizarAdicionValorCorrecto() throws Exception {
+    	
+    	Adicion adicion = new Adicion(1L, "Quesito", "Rico quesito", 2000);
+    	    	
+    	Optional<Adicion> adicionOpcional = Optional.of(adicion);
+    	
+    	
+
+        AdicionDTO adicionDTO = new AdicionDTO(1L, "peperoni", "peperonis ricos y frescos", "3000");
+
+        Mockito.when(adicionRepository.findById(adicionDTO.getId())).thenReturn(adicionOpcional);
+        
+        Mockito.when(adicionRepository.save(adicion)).thenReturn(null);
+        
+        String mensajeResultado = adicionService.guardar(adicionDTO);
+
+        assertEquals(MessageUtil.ACTUALIZACION_EXITOSA_ADICION.getMensaje(),mensajeResultado);
+
     }
 
 }
