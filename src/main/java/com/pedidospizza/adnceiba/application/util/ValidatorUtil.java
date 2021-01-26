@@ -1,6 +1,6 @@
 package com.pedidospizza.adnceiba.application.util;
 
-public class ValidatorUtil {
+public final class ValidatorUtil {
 	
 	private ValidatorUtil() {}
 	
