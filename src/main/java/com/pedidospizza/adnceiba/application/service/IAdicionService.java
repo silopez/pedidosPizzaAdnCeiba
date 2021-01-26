@@ -12,7 +12,7 @@ public interface IAdicionService {
 	
 	public String guardar(AdicionDTO adicion) throws Exception;
 	
-	public void eliminarAdicion(Long id);
+	public String eliminarAdicion(Long id);
 
 	public Adicion buscarAdicionNombre(String nombre);
 

@@ -79,9 +79,9 @@ public class AdicionRestController {
 	public ResponseEntity<?> eliminar(@PathVariable Long id) {
 		Map<String, Object> response = new HashMap<>();
 		try {
-			adicionService.eliminarAdicion(id);
+			String mensaje = adicionService.eliminarAdicion(id);
 			
-			response.put(RESPUESTA, MessageUtil.ADICION_ELIMINADA_EXITOSAMENTE.getMensaje());
+			response.put(RESPUESTA, mensaje);
 			return new ResponseEntity<>(response, HttpStatus.NO_CONTENT);
 		}catch (DataAccessException e) {
 			response.put(RESPUESTA, e.getMessage());

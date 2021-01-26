@@ -102,6 +102,38 @@ public class AdicionServiceTest {
         assertEquals(MessageUtil.ACTUALIZACION_EXITOSA_ADICION.getMensaje(),mensajeResultado);
 
     }
+    
+    @Test
+    public void buscarAdicionNombre() throws Exception {
+    	
+    	String nombre = "Piña";
+    	
+    	Adicion adicion = new Adicion(1L, "Piña", "Rico piña", 2000);
+    	
+    	Mockito.when(adicionRepository.findBynombre(nombre)).thenReturn(adicion);
+    	
+    	Adicion respuestaAdicion = adicionService.buscarAdicionNombre("Piña");
+    	
+    	assertEquals(adicion.getId(),respuestaAdicion.getId());
+    	assertEquals(adicion.getNombre(),respuestaAdicion.getNombre());
+    	assertEquals(adicion.getDescripcion(),respuestaAdicion.getDescripcion());
+    	assertEquals(adicion.getValor(),respuestaAdicion.getValor());
+
+    }
+    
+    @Test
+    public void eliminarAdicion() throws Exception {
+    	
+    	Long idAdicion = 1L;
+    
+    	Mockito.doNothing().when(adicionRepository).deleteById(idAdicion);
+    	
+    	String resultado = adicionService.eliminarAdicion(idAdicion);
+    	
+    	assertEquals(MessageUtil.ADICION_ELIMINADA_EXITOSAMENTE.getMensaje(), resultado);
+    	
+    	
+    }
 
 }
 

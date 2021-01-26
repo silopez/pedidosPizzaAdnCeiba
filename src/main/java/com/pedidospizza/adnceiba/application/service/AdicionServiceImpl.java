@@ -80,7 +80,9 @@ public class AdicionServiceImpl implements IAdicionService{
 	
 
 	@Override
-	public void eliminarAdicion(Long id) {
+	public String eliminarAdicion(Long id) {
 		adicionRepository.deleteById(id);
+		
+		return MessageUtil.ADICION_ELIMINADA_EXITOSAMENTE.getMensaje();	
 	}
 }
