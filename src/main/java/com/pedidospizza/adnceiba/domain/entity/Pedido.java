@@ -64,7 +64,7 @@ public class Pedido implements Serializable {
 	}
 
 	public void setFechaPedido(Date fechaPedido) {
-		this.fechaPedido = fechaPedido;
+		this.fechaPedido = (Date) fechaPedido.clone();
 	}
 
 	public String getEstado() {

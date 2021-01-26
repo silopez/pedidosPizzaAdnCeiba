@@ -40,7 +40,7 @@ public class AdicionRestController {
 	
 	@GetMapping("/buscarAdicion/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<?> obtenerAdicion(@PathVariable Long id){
+	public ResponseEntity<Object> obtenerAdicion(@PathVariable Long id){
 		Map<String, Object> respuesta = new HashMap<>();
 		
 		try {
