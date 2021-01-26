@@ -2,6 +2,8 @@ package com.pedidospizza.adnceiba.application.util;
 
 public class ValidatorUtil {
 	
+	private ValidatorUtil() {}
+	
 	public static Integer validarValorDinero(String valorDinero) throws Exception{
 		Integer valor;
 		
