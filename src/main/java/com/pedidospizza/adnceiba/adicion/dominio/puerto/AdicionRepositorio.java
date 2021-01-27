@@ -1,9 +1,7 @@
 package com.pedidospizza.adnceiba.adicion.dominio.puerto;
 
-import java.util.List;
 
 import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
-import com.pedidospizza.adnceiba.adicion.dominio.modelo.AdicionDto;
 
 public interface AdicionRepositorio {
 	
