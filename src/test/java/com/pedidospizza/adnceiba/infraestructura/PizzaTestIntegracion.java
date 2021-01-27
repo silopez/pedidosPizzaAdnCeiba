@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -21,8 +20,7 @@ import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class AdicionTestIntegracion {
-
+public class PizzaTestIntegracion {
 	@Autowired
     private ObjectMapper objectMapper;
 
@@ -37,16 +35,16 @@ public class AdicionTestIntegracion {
     }
 
     @Test
-    public void crearAdicionTest() throws Exception {
+    public void crearPizzaTest() throws Exception {
 
         Long id = 10L;
-        String nombre = "Arequipe";
-        String descripcion = "Dulce arequipe";
-        Integer valor = 5000;
+        String nombre = "Pizza Italiana";
+        String descripcion = "Rica Pizza Italiana";
+        Integer valor = 50000;
 
         AdicionComando adicionComando = new AdicionComando(id, nombre, descripcion, valor);
         mockMvc.perform( MockMvcRequestBuilders
-                .post("/adicion/crear")
+                .post("/pizza/crear")
                 .content(objectMapper.writeValueAsString(adicionComando))
                 .contentType("application/json")
                 .accept("application/json"))
@@ -56,7 +54,7 @@ public class AdicionTestIntegracion {
     @Test
     public void listarTodasAdicionTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
-                .get("/adicion/listarTodas")
+                .get("/pizza/listarTodas")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());

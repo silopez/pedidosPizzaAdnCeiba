@@ -2,10 +2,12 @@ package com.pedidospizza.adnceiba.pizza.infraestructura.controlador;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
@@ -27,6 +29,7 @@ public class PizzaControlador {
     }
 
     @PostMapping("/crear")
+    @ResponseStatus(HttpStatus.CREATED)
     public Pizza crearPizza(@RequestBody PizzaComando pizzaComando) {
         return crearPizzaManejador.ejecutar(pizzaComando);
     }
