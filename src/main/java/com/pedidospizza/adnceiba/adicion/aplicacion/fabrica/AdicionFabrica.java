@@ -7,7 +7,12 @@ import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
 
 @Component
 public class AdicionFabrica {
+	
 	public Adicion crearAdicion(AdicionComando adicionComando) {
+        return new Adicion(adicionComando.getId(), adicionComando.getNombre(), adicionComando.getDescripcion(), adicionComando.getValor());
+    }
+	
+	public Adicion actualizarAdicion(AdicionComando adicionComando) {
         return new Adicion(adicionComando.getId(), adicionComando.getNombre(), adicionComando.getDescripcion(), adicionComando.getValor());
     }
 }

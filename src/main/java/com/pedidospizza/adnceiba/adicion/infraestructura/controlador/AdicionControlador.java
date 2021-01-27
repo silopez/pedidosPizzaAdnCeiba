@@ -16,24 +16,29 @@ import com.pedidospizza.adnceiba.adicion.dominio.modelo.AdicionDto;
 
 @RestController
 @RequestMapping("/adicion")
-public class AdicionControladdor {
+public class AdicionControlador {
 	
 	private final CrearAdicionManejador crearAdicionManejador;
     private final ConsultarAdicionManejador consultarAdicionManejador;
 
-    public AdicionControladdor(CrearAdicionManejador crearAdicionManejador, ConsultarAdicionManejador consultarAdicionManejador) {
+    public AdicionControlador(CrearAdicionManejador crearAdicionManejador, ConsultarAdicionManejador consultarAdicionManejador) {
         this.crearAdicionManejador = crearAdicionManejador;
         this.consultarAdicionManejador = consultarAdicionManejador;
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public Adicion crearAdicion(@RequestBody AdicionComando adicionComando) {
         return crearAdicionManejador.ejecutar(adicionComando);
     }
 
-    @GetMapping
+    @GetMapping("/listarTodas")
     public List<AdicionDto> obtenerAdicion(){
         return consultarAdicionManejador.obtenerTodasAdiciones();
+    }
+    
+    @PostMapping("/actualizar")
+    public Adicion  actualizarAdicion(@RequestBody AdicionComando adicionComando) {
+    	return null;//actualizarAdicionManejador.ejecutar(adicionComando);
     }
 
 }

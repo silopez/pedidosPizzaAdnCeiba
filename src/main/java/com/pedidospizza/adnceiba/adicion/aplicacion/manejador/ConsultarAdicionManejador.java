@@ -19,7 +19,5 @@ public class ConsultarAdicionManejador {
     public List<AdicionDto> obtenerTodasAdiciones() {
         return consultarAdicionServicio.getAllAdiciones();
     }
-	
-	
-	
+		
 }

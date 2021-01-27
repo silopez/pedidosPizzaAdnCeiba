@@ -1,4 +1,4 @@
-package com.pedidospizza.adnceiba.adicion.infraestructura.persistencia.entidad;
+package com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,10 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
-@Entity(name = "adiciones")
-@NamedQuery(name="Adicion.obtenerTodas" , query="SELECT ans FROM adiciones ans")
-public class AdicionEntidad {
-
+@Entity(name = "pizzas")
+@NamedQuery(name="Pizza.obtenerTodas" , query="SELECT ans FROM pizzas ans")
+public class PizzaEntidad {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -18,8 +18,8 @@ public class AdicionEntidad {
 	@Column(name = "nombre", length = 50)
 	private String nombre;
 	
-	@Column(name = "descripcion", length = 250)
-	private String descripcion;
+	@Column(name = "tipo", length = 250)
+	private String tipo;
 	
 	@Column(name = "valor")
 	private Integer valor;
@@ -40,12 +40,12 @@ public class AdicionEntidad {
 		this.nombre = nombre;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Integer getValor() {

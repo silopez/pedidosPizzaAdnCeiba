@@ -15,7 +15,7 @@ public interface AdicionRepositorio {
      * Nos permite actualizar un adicion creada anteriormente
      * @param id
      */
-    void actualizar(Long id);
+    Adicion actualizar(Adicion adicion);
 
     /**
      * Nos permite eliminar una adicion creada anteriormente

@@ -32,15 +32,17 @@ public class AdicionPersistenciaRepositorio implements AdicionRepositorio {
 	}
 
 	@Override
-	public void actualizar(Long id) {
-		// TODO Auto-generated method stub
+	public Adicion actualizar(Adicion adicion) {
+		AdicionEntidad adicionEntidad = AdicionTranslader.parseAdicionToEntidad(adicion);
+		entityManager.persist(adicionEntidad);
+        entityManager.flush();
 		
+		return null;
 	}
 
 	@Override
 	public void eliminar(Long id) {
 		// TODO Auto-generated method stub
-		
 	}
 	
 	
