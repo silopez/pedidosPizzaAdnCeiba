@@ -1,6 +1,9 @@
 package com.pedidospizza.adnceiba.adicion.dominio.puerto;
 
+import java.util.List;
+
 import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
+import com.pedidospizza.adnceiba.adicion.dominio.modelo.AdicionDto;
 
 public interface AdicionRepositorio {
 	
@@ -22,4 +25,5 @@ public interface AdicionRepositorio {
      * @param id
      */
     void eliminar(Long id);
+    
 }

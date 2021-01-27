@@ -8,13 +8,7 @@ public class Adicion {
 	private Integer valor;
 	
 	public Adicion() {}
-	
-	public Adicion(String nombre, String descripcion, Integer valor) {		
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.valor = valor;
-	}
-	
+		
 	public Adicion(Long id, String nombre, String descripcion, Integer valor) {		
 		this.id = id;
 		this.nombre = nombre;
