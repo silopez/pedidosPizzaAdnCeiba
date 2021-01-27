@@ -1,31 +1,10 @@
-package com.pedidospizza.adnceiba.domain.entity;
+package com.pedidospizza.adnceiba.adicion.dominio.modelo;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="adiciones")
-public class Adicion implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Adicion {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name = "nombre", nullable = false, length = 50)
 	private String nombre;
-	
-	@Column(name = "descripcion", length = 150)
 	private String descripcion;
-	
-	@Column(name = "valor", nullable = false)
 	private Integer valor;
 	
 	public Adicion() {}

@@ -1,3 +1,3 @@
-INSERT INTO adiciones (nombre, descripcion, valor) VALUES ('Jalapeños', 'Deliciosos trozos de jalapeños mexicanos', '5000');
-INSERT INTO adiciones (nombre, descripcion, valor) VALUES ('perro', 'Deliciosos trozos de piña calada', '5000');
-INSERT INTO adiciones (nombre, descripcion, valor) VALUES ('Tomate', 'Deliciosos trozos de tomate', '5000');
+INSERT INTO adiciones (id, nombre, descripcion, valor) VALUES (1,'Jalapeños', 'Deliciosos trozos de jalapeños mexicanos', '5000');
+INSERT INTO adiciones (id, nombre, descripcion, valor) VALUES (2,'perro', 'Deliciosos trozos de piña calada', '5000');
+INSERT INTO adiciones (id, nombre, descripcion, valor) VALUES (3,'Tomate', 'Deliciosos trozos de tomate', '5000');
