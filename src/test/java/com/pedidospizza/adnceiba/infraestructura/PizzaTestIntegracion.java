@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
+import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -39,22 +39,38 @@ public class PizzaTestIntegracion {
 
         Long id = 10L;
         String nombre = "Pizza Italiana";
-        String descripcion = "Rica Pizza Italiana";
+        String tipo = "Rica Pizza Italiana";
         Integer valor = 50000;
 
-        AdicionComando adicionComando = new AdicionComando(id, nombre, descripcion, valor);
+        PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
         mockMvc.perform( MockMvcRequestBuilders
                 .post("/pizza/crear")
-                .content(objectMapper.writeValueAsString(adicionComando))
+                .content(objectMapper.writeValueAsString(pizzaComando))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isCreated());
     }
     
     @Test
-    public void listarTodasAdicionTest() throws Exception {
+    public void listarTodasPizzaTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
                 .get("/pizza/listarTodas")
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void actualizarPizzaTest() throws Exception {
+    	Long id = 1L;
+        String nombre = "Pizza Italiana";
+        String tipo = "Rica Pizza Italiana";
+        Integer valor = 50000;
+
+        PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
+        mockMvc.perform( MockMvcRequestBuilders
+                .post("/pizza/actualizar")
+                .content(objectMapper.writeValueAsString(pizzaComando))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());

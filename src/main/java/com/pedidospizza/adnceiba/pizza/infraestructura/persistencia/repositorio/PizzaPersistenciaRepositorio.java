@@ -37,13 +37,13 @@ public class PizzaPersistenciaRepositorio implements PizzaRepositorio {
 		
 		
 		
-		PizzaEntidad pizzaEntidad = PizzaTranslader.parsePizzaToEntidad(pizza);
-				
+		PizzaEntidad pizzaEntidad = entityManager.find(PizzaEntidad.class, pizza.getId());
+		
 		pizzaEntidad.setNombre(pizza.getNombre());
 		pizzaEntidad.setTipo(pizza.getTipo());
 		pizzaEntidad.setValor(pizza.getValor());
 		
-		entityManager.refresh(pizzaEntidad);
+		entityManager.merge(pizzaEntidad);
 		
         entityManager.flush();
         
