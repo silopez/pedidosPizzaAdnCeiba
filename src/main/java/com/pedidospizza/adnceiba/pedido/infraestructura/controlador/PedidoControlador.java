@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
-import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.ConsultarPedidoManejador;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.CrearPedidoManejador;
