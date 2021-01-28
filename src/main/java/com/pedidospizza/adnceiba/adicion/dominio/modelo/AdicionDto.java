@@ -1,5 +1,8 @@
 package com.pedidospizza.adnceiba.adicion.dominio.modelo;
 
+import lombok.Getter;
+
+@Getter
 public class AdicionDto {
 	
 	private Long id;
@@ -14,19 +17,4 @@ public class AdicionDto {
 		this.valor = valor;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-	
-	public Integer getValor() {
-		return valor;
-	}
 }
