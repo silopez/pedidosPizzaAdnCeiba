@@ -1,5 +1,8 @@
 package com.pedidospizza.adnceiba.pedido.aplicacion.comando;
 
+import lombok.Getter;
+
+@Getter
 public class PedidoComando {
 
 	private Long id;
@@ -16,25 +19,5 @@ public class PedidoComando {
 		this.direccion = direccion;
 		this.total = total;
 		this.estadoPedido = estadoPedido;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public Integer getTotal() {
-		return total;
-	}
-
-	public String getEstadoPedido() {
-		return estadoPedido;
 	}
 }
