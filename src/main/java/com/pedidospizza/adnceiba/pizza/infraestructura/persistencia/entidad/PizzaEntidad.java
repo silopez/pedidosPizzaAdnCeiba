@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+import lombok.Data;
+
 @Entity(name = "pizzas")
 @NamedQuery(name="Pizza.obtenerTodas" , query="SELECT ans FROM pizzas ans")
+@Data
 public class PizzaEntidad {
 	
 	@Id
@@ -23,36 +26,4 @@ public class PizzaEntidad {
 	
 	@Column(name = "valor")
 	private Integer valor;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public Integer getValor() {
-		return valor;
-	}
-
-	public void setValor(Integer valor) {
-		this.valor = valor;
-	}	
 }

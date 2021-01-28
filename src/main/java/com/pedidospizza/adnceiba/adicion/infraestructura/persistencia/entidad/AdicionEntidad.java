@@ -7,8 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
+import lombok.Data;
+
 @Entity(name = "adiciones")
 @NamedQuery(name="Adicion.obtenerTodas" , query="SELECT ans FROM adiciones ans")
+@Data
 public class AdicionEntidad {
 
 	@Id
@@ -22,37 +25,5 @@ public class AdicionEntidad {
 	private String descripcion;
 	
 	@Column(name = "valor")
-	private Integer valor;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public Integer getValor() {
-		return valor;
-	}
-
-	public void setValor(Integer valor) {
-		this.valor = valor;
-	}	
+	private Integer valor;	
 }

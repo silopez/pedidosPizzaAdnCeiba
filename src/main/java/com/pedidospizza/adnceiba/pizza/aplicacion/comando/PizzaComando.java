@@ -1,5 +1,10 @@
 package com.pedidospizza.adnceiba.pizza.aplicacion.comando;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PizzaComando {
 
 	private Long id;
@@ -19,31 +24,6 @@ public class PizzaComando {
 		this.id = id;
 		this.nombre = nombre;
 		this.tipo = tipo;
-		this.valor = valor;
-	}
-	 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	public Integer getValor() {
-		return valor;
-	}
-	public void setValor(Integer valor) {
 		this.valor = valor;
 	}
 }
