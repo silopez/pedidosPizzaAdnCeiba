@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
+import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
 import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.PizzaTranslader;
 import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.PizzaEntidad;
@@ -33,11 +34,34 @@ public class PizzaPersistenciaRepositorio implements PizzaRepositorio {
 
 	@Override
 	public Pizza actualizar(Pizza pizza) {
-		PizzaEntidad pizzaEntidad = PizzaTranslader.parsePizzaToEntidad(pizza);
-		entityManager.persist(pizzaEntidad);
-        entityManager.flush();
 		
-		return null;
+		
+		
+		PizzaEntidad pizzaEntidad = PizzaTranslader.parsePizzaToEntidad(pizza);
+				
+		pizzaEntidad.setNombre(pizza.getNombre());
+		pizzaEntidad.setTipo(pizza.getTipo());
+		pizzaEntidad.setValor(pizza.getValor());
+		
+		entityManager.refresh(pizzaEntidad);
+		
+        entityManager.flush();
+        
+        return new Pizza(
+        		pizzaEntidad.getId(),
+        		pizzaEntidad.getNombre(),
+        		pizzaEntidad.getTipo(),
+        		pizzaEntidad.getValor()
+        );
+	}
+	
+	@Override
+	public PizzaDto bucarPorId(Long id) {
+		PizzaEntidad pizzaEntidadEncontrada = entityManager.find(PizzaEntidad.class, id);
+		
+		PizzaDto pizzaEncontrada = PizzaTranslader.parsePizzaToDto(pizzaEntidadEncontrada);
+		
+		return pizzaEncontrada;
 	}
 
 	@Override

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
+import com.pedidospizza.adnceiba.pizza.aplicacion.manejador.ActualizarPizzaManejador;
 import com.pedidospizza.adnceiba.pizza.aplicacion.manejador.ConsultarPizzaManejador;
 import com.pedidospizza.adnceiba.pizza.aplicacion.manejador.CrearPizzaManejador;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
@@ -22,10 +23,12 @@ public class PizzaControlador {
 
 	private final CrearPizzaManejador crearPizzaManejador;
     private final ConsultarPizzaManejador consultarPizzaManejador;
+    private final ActualizarPizzaManejador actualizarPizzaManejador;
 
-    public PizzaControlador(CrearPizzaManejador crearPizzaManejador, ConsultarPizzaManejador consultarPizzaManejador) {
+    public PizzaControlador(CrearPizzaManejador crearPizzaManejador, ConsultarPizzaManejador consultarPizzaManejador, ActualizarPizzaManejador actualizarPizzaManejador) {
         this.crearPizzaManejador = crearPizzaManejador;
         this.consultarPizzaManejador = consultarPizzaManejador;
+        this.actualizarPizzaManejador = actualizarPizzaManejador;
     }
 
     @PostMapping("/crear")
@@ -41,6 +44,6 @@ public class PizzaControlador {
     
     @PostMapping("/actualizar")
     public Pizza  actualizarPizza(@RequestBody PizzaComando pizzaComando) {
-    	return null;//actualizarAdicionManejador.ejecutar(adicionComando);
+    	return actualizarPizzaManejador.ejecutar(pizzaComando);
     }
 }

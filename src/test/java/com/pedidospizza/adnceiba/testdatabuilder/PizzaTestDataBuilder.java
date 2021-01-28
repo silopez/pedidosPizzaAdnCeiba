@@ -11,20 +11,15 @@ import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 
 public class PizzaTestDataBuilder {
 	
-	private static final Long ID_TEST1 = 2L;
+	private static final Long ID_TEST1 = 1L;
     private static final String NOMBRE_TEST1 = "Pizza mexicana";
     private static final String TIPO_TEST1 = "Deliciosa pizza mexicana con jalapeños y carne molida";
     private static final Integer VALOR_TEST1 = 40000;
     
     private static final Long ID_TEST2 = 2L;
-    private static final String NOMBRE_TEST2 = "Pizza mexicana";
-    private static final String TIPO_TEST2 = "Deliciosa pizza mexicana con jalapeños y carne molida";
+    private static final String NOMBRE_TEST2 = "Pizza paisa";
+    private static final String TIPO_TEST2 = "Deliciosa pizza con maicitos, maduro y chicharron";
     private static final Integer VALOR_TEST2 = 40000;
-
-    private static final Long ID_TEST3 = 1L;
-    private static final String NOMBRE_TEST3 = "Pizza paisa";
-    private static final String TIPO_TEST3 = "Deliciosa pizza con maicitos, maduro y chicharron";
-    private static final Integer VALOR_TEST3 = 60000;
     
     private Long id;
     private String nombre;
@@ -46,13 +41,11 @@ public class PizzaTestDataBuilder {
     }
     
     public List<PizzaDto> buildAllPizza() {
-    	PizzaDto pizza1 =  new PizzaDto(id, nombre, tipo, valor);
+    	PizzaDto pizza1 =  new PizzaDto(ID_TEST1, NOMBRE_TEST1, TIPO_TEST1, VALOR_TEST1);
     	PizzaDto pizza2 =  new PizzaDto(ID_TEST2, NOMBRE_TEST2, TIPO_TEST2, VALOR_TEST2);
-    	PizzaDto pizza3 =  new PizzaDto(ID_TEST3, NOMBRE_TEST3, TIPO_TEST3, VALOR_TEST3);
         
     	listaPizzasDto.add(pizza1);
     	listaPizzasDto.add(pizza2);
-    	listaPizzasDto.add(pizza3);
         
         return listaPizzasDto;
     }

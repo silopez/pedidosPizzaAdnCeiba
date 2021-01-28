@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaDao;
 import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
+import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ConsultarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.CrearPizzaServicio;
 
@@ -18,5 +19,10 @@ public class PizzaServicioBean {
     @Bean
     public ConsultarPizzaServicio consultarPizzaServicio(PizzaDao pizzaDao) {
         return new ConsultarPizzaServicio(pizzaDao);
+    }
+    
+    @Bean
+    public ActualizarPizzaServicio actualizarPizzaServicio(PizzaRepositorio pizzaRepositorio) {
+        return new ActualizarPizzaServicio(pizzaRepositorio);
     }
 }
