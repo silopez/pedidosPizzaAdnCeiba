@@ -1,4 +1,4 @@
-package com.pedidospizza.adnceiba.testdatabuilder;
+package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 
 import java.util.ArrayList;
 import java.util.List;

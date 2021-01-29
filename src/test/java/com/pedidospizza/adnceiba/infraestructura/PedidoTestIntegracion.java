@@ -46,7 +46,7 @@ public class PedidoTestIntegracion {
 
         PedidoComando pedidoComando = new PedidoComando(id, nombre, direccion, total, estado);
         mockMvc.perform( MockMvcRequestBuilders
-                .post("/pedido/crear")
+                .post("/pedidos")
                 .content(objectMapper.writeValueAsString(pedidoComando))
                 .contentType("application/json")
                 .accept("application/json"))
@@ -56,7 +56,7 @@ public class PedidoTestIntegracion {
     @Test
     public void listarTodasPedidoTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
-                .get("/pedido/listarTodos")
+                .get("/pedidos")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());

@@ -17,7 +17,7 @@ import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
 
 @RestController
-@RequestMapping("/pedido")
+@RequestMapping("/pedidos")
 public class PedidoControlador {
 	
 	private final CrearPedidoManejador crearPedidoManejador;
@@ -28,13 +28,13 @@ public class PedidoControlador {
         this.consultarPedidoManejador = consultarPedidoManejador;
     }
 
-    @PostMapping("/crear")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Pedido crearPedido(@RequestBody PedidoComando pedidoComando) {
         return crearPedidoManejador.ejecutar(pedidoComando);
     }
 
-    @GetMapping("/listarTodos")
+    @GetMapping
     public List<PedidoDto> obtenerPedido(){
         return consultarPedidoManejador.obtenerTodosPedidos();
     }

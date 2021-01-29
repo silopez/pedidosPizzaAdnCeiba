@@ -1,13 +1,11 @@
-package com.pedidospizza.adnceiba.testdatabuilder;
+package com.pedidospizza.adnceiba.testdatabuilder.pizza;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 
-public class PizzaTestDataBuilder {
-	
+public class PizzaDtoTestDataBuilder {
 	private static final Long ID_TEST1 = 1L;
     private static final String NOMBRE_TEST1 = "Pizza mexicana";
     private static final String TIPO_TEST1 = "Deliciosa pizza mexicana con jalapeños y carne molida";
@@ -25,7 +23,7 @@ public class PizzaTestDataBuilder {
     
     private List<PizzaDto> listaPizzasDto = new ArrayList<>();
 
-    public PizzaTestDataBuilder() {
+    public PizzaDtoTestDataBuilder() {
         this.id = ID_TEST1;
         this.nombre = NOMBRE_TEST1;
         this.tipo = TIPO_TEST1;
@@ -33,11 +31,11 @@ public class PizzaTestDataBuilder {
     }
 
 
-    public Pizza build() {
-        return new Pizza(id, nombre, tipo, valor);
+    public PizzaDto build() {
+        return new PizzaDto(id, nombre, tipo, valor);
     }
     
-    public List<PizzaDto> buildAllPizza() {
+    public List<PizzaDto> buildAllPizzaDto() {
     	PizzaDto pizza1 =  new PizzaDto(ID_TEST1, NOMBRE_TEST1, TIPO_TEST1, VALOR_TEST1);
     	PizzaDto pizza2 =  new PizzaDto(ID_TEST2, NOMBRE_TEST2, TIPO_TEST2, VALOR_TEST2);
         

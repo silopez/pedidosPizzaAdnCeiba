@@ -16,6 +16,9 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
+import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
+import com.pedidospizza.adnceiba.testdatabuilder.adicion.AdicionComandoTestDataBuilder;
+import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaComandoTestDataBuilder;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -56,6 +59,17 @@ public class AdicionTestIntegracion {
     public void listarTodasAdicionTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
                 .get("/adiciones")
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void eliminarPizzaTest() throws Exception {
+        AdicionComando adicion = new AdicionComandoTestDataBuilder().build();
+        mockMvc.perform( MockMvcRequestBuilders
+                .delete("/adiciones/1")
+                .content(objectMapper.writeValueAsString(adicion))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());

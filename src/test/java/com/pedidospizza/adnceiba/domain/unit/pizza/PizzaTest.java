@@ -1,4 +1,4 @@
-package com.pedidospizza.adnceiba.domain.unit;
+package com.pedidospizza.adnceiba.domain.unit.pizza;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,7 +14,11 @@ import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ConsultarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.CrearPizzaServicio;
-import com.pedidospizza.adnceiba.testdatabuilder.PizzaTestDataBuilder;
+import com.pedidospizza.adnceiba.pizza.dominio.servicio.EliminarPizzaServicio;
+import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.PizzaEntidad;
+import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaDtoTestDataBuilder;
+import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaComandoTestDataBuilder;
+import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaTestDataBuilder;
 
 public class PizzaTest {
 	@Test
@@ -29,7 +33,7 @@ public class PizzaTest {
 	
 	@Test
     public void validarlistarTodasPizzas() {
-        List<PizzaDto> pizzas = new PizzaTestDataBuilder().buildAllPizza();
+        List<PizzaDto> pizzas = new PizzaDtoTestDataBuilder().buildAllPizzaDto();
         PizzaDao pizzaDao = Mockito.mock(PizzaDao.class);
         Mockito.when(pizzaDao.getPizzas()).thenReturn(pizzas);
         ConsultarPizzaServicio consultarPizzaServicio = new ConsultarPizzaServicio(pizzaDao);

@@ -11,7 +11,4 @@ public class PizzaFabrica {
         return new Pizza(pizzaComando.getId(), pizzaComando.getNombre(), pizzaComando.getTipo(), pizzaComando.getValor());
     }
 	
-	public Pizza actualizarPizza(PizzaComando pizzaComando) {
-        return new Pizza(pizzaComando.getId(), pizzaComando.getNombre(), pizzaComando.getTipo(), pizzaComando.getValor());
-    }
 }

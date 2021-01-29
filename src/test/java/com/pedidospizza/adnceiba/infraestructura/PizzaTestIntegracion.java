@@ -16,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
+import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaComandoTestDataBuilder;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -37,15 +38,10 @@ public class PizzaTestIntegracion {
     @Test
     public void crearPizzaTest() throws Exception {
 
-        Long id = 10L;
-        String nombre = "Pizza Italiana";
-        String tipo = "Rica Pizza Italiana";
-        Integer valor = 50000;
-
-        PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
+        PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .post("/pizzas")
-                .content(objectMapper.writeValueAsString(pizzaComando))
+                .content(objectMapper.writeValueAsString(pizza))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isCreated());
@@ -62,15 +58,22 @@ public class PizzaTestIntegracion {
     
     @Test
     public void actualizarPizzaTest() throws Exception {
-    	Long id = 1L;
-        String nombre = "Pizza Italiana";
-        String tipo = "Rica Pizza Italiana";
-        Integer valor = 50000;
 
-        PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
+        PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .put("/pizzas")
-                .content(objectMapper.writeValueAsString(pizzaComando))
+                .content(objectMapper.writeValueAsString(pizza))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void eliminarPizzaTest() throws Exception {
+        PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
+        mockMvc.perform( MockMvcRequestBuilders
+                .delete("/pizzas/1")
+                .content(objectMapper.writeValueAsString(pizza))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());

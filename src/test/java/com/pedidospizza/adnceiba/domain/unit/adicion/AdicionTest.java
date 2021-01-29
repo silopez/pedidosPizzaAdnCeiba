@@ -1,4 +1,4 @@
-package com.pedidospizza.adnceiba.domain.unit;
+package com.pedidospizza.adnceiba.domain.unit.adicion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,7 @@ import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionDao;
 import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionRepositorio;
 import com.pedidospizza.adnceiba.adicion.dominio.servicio.ConsultarAdicionServicio;
 import com.pedidospizza.adnceiba.adicion.dominio.servicio.CrearAdicionServicio;
-import com.pedidospizza.adnceiba.testdatabuilder.AdicionTestDataBuilder;
+import com.pedidospizza.adnceiba.testdatabuilder.adicion.AdicionTestDataBuilder;
 
 public class AdicionTest {
 	
