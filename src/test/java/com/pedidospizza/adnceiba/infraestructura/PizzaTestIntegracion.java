@@ -44,7 +44,7 @@ public class PizzaTestIntegracion {
 
         PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
         mockMvc.perform( MockMvcRequestBuilders
-                .post("/pizza/crear")
+                .post("/pizzas")
                 .content(objectMapper.writeValueAsString(pizzaComando))
                 .contentType("application/json")
                 .accept("application/json"))
@@ -54,7 +54,7 @@ public class PizzaTestIntegracion {
     @Test
     public void listarTodasPizzaTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
-                .get("/pizza/listarTodas")
+                .get("/pizzas")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
@@ -69,7 +69,7 @@ public class PizzaTestIntegracion {
 
         PizzaComando pizzaComando = new PizzaComando(id, nombre, tipo, valor);
         mockMvc.perform( MockMvcRequestBuilders
-                .post("/pizza/actualizar")
+                .put("/pizzas")
                 .content(objectMapper.writeValueAsString(pizzaComando))
                 .contentType("application/json")
                 .accept("application/json"))

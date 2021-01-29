@@ -45,7 +45,7 @@ public class AdicionTestIntegracion {
 
         AdicionComando adicionComando = new AdicionComando(id, nombre, descripcion, valor);
         mockMvc.perform( MockMvcRequestBuilders
-                .post("/adicion/crear")
+                .post("/adiciones")
                 .content(objectMapper.writeValueAsString(adicionComando))
                 .contentType("application/json")
                 .accept("application/json"))
@@ -55,7 +55,7 @@ public class AdicionTestIntegracion {
     @Test
     public void listarTodasAdicionTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
-                .get("/adicion/listarTodas")
+                .get("/adiciones")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
