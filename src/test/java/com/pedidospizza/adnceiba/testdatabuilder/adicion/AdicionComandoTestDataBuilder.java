@@ -1,10 +1,6 @@
 package com.pedidospizza.adnceiba.testdatabuilder.adicion;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
-import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
 
 public class AdicionComandoTestDataBuilder {
 	

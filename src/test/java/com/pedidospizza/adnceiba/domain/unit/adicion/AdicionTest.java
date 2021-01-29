@@ -13,6 +13,7 @@ import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionDao;
 import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionRepositorio;
 import com.pedidospizza.adnceiba.adicion.dominio.servicio.ConsultarAdicionServicio;
 import com.pedidospizza.adnceiba.adicion.dominio.servicio.CrearAdicionServicio;
+import com.pedidospizza.adnceiba.testdatabuilder.adicion.AdicionDtoTestDataBuilder;
 import com.pedidospizza.adnceiba.testdatabuilder.adicion.AdicionTestDataBuilder;
 
 public class AdicionTest {
@@ -29,7 +30,7 @@ public class AdicionTest {
 	
 	@Test
     public void validarlistarTodasAdicion() {
-        List<AdicionDto> adiciones = new AdicionTestDataBuilder().buildAllAdicion();
+        List<AdicionDto> adiciones = new AdicionDtoTestDataBuilder().buildAllAdicion();
         AdicionDao adicionDao = Mockito.mock(AdicionDao.class);
         Mockito.when(adicionDao.getAdiciones()).thenReturn(adiciones);
         ConsultarAdicionServicio consultarAdicionServicio = new ConsultarAdicionServicio(adicionDao);

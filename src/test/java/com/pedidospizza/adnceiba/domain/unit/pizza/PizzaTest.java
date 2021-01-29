@@ -14,10 +14,7 @@ import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ConsultarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.CrearPizzaServicio;
-import com.pedidospizza.adnceiba.pizza.dominio.servicio.EliminarPizzaServicio;
-import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.PizzaEntidad;
 import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaDtoTestDataBuilder;
-import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaComandoTestDataBuilder;
 import com.pedidospizza.adnceiba.testdatabuilder.pizza.PizzaTestDataBuilder;
 
 public class PizzaTest {
