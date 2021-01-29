@@ -2,6 +2,7 @@ package com.pedidospizza.adnceiba.adicion.dominio.puerto;
 
 
 import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
+import com.pedidospizza.adnceiba.adicion.infraestructura.persistencia.entidad.AdicionEntidad;
 
 public interface AdicionRepositorio {
 	
@@ -22,6 +23,12 @@ public interface AdicionRepositorio {
      * Nos permite eliminar una adicion creada anteriormente
      * @param id
      */
-    void eliminar(Long id);
+	void eliminar(AdicionEntidad adicionEntidad);
+
+	/**
+     * Nos permite buscar por Id la entidad
+     * @param id
+     */
+	AdicionEntidad bucarEntidad(Long id);
     
 }

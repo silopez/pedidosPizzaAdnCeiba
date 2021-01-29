@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import com.pedidospizza.adnceiba.pizza.aplicacion.comando.PizzaComando;
 import com.pedidospizza.adnceiba.pizza.aplicacion.fabrica.PizzaFabrica;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
-import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 
 @Component

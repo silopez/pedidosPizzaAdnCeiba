@@ -7,12 +7,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.pedidospizza.adnceiba.adicion.dominio.modelo.Adicion;
-import com.pedidospizza.adnceiba.adicion.dominio.modelo.AdicionDto;
-import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionDao;
-import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionRepositorio;
-import com.pedidospizza.adnceiba.adicion.dominio.servicio.ConsultarAdicionServicio;
-import com.pedidospizza.adnceiba.adicion.dominio.servicio.CrearAdicionServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaDao;
@@ -20,8 +14,6 @@ import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ConsultarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.CrearPizzaServicio;
-import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.PizzaTranslader;
-import com.pedidospizza.adnceiba.testdatabuilder.AdicionTestDataBuilder;
 import com.pedidospizza.adnceiba.testdatabuilder.PizzaTestDataBuilder;
 
 public class PizzaTest {

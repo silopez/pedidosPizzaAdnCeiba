@@ -33,16 +33,33 @@ public class AdicionPersistenciaRepositorio implements AdicionRepositorio {
 
 	@Override
 	public Adicion actualizar(Adicion adicion) {
-		AdicionEntidad adicionEntidad = AdicionTranslader.parseAdicionToEntidad(adicion);
-		entityManager.persist(adicionEntidad);
-        entityManager.flush();
+
+		AdicionEntidad adicionEntidad = entityManager.find(AdicionEntidad.class, adicion.getId());
 		
-		return null;
+		adicionEntidad.setNombre(adicion.getNombre());
+		adicionEntidad.setDescripcion(adicion.getDescripcion());
+		adicionEntidad.setValor(adicion.getValor());
+		
+		entityManager.merge(adicionEntidad);
+		
+        entityManager.flush();
+        
+        return new Adicion(
+        		adicionEntidad.getId(),
+        		adicionEntidad.getNombre(),
+        		adicionEntidad.getDescripcion(),
+        		adicionEntidad.getValor()
+        );
 	}
 
 	@Override
-	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+	public AdicionEntidad bucarEntidad(Long id) {
+		return entityManager.find(AdicionEntidad.class, id);
+	}
+
+	@Override
+	public void eliminar(AdicionEntidad adicionEntidad) {
+		entityManager.remove(adicionEntidad);
 	}
 	
 	

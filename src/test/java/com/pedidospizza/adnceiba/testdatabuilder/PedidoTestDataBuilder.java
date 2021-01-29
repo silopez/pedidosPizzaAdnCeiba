@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
-import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
-import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
 
 public class PedidoTestDataBuilder {
 

@@ -2,6 +2,7 @@ package com.pedidospizza.adnceiba.pizza.dominio.puerto;
 
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
 import com.pedidospizza.adnceiba.pizza.dominio.modelo.PizzaDto;
+import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.PizzaEntidad;
 
 public interface PizzaRepositorio {
 	
@@ -19,14 +20,20 @@ public interface PizzaRepositorio {
     Pizza actualizar(Pizza adicion);
 
     /**
-     * Nos permite eliminar una pizza creada anteriormente
-     * @param id
-     */
-    void eliminar(Long id);
-
-    /**
      * Nos permite buscar una pizza creada anteriormente
      * @param id
      */
 	PizzaDto bucarPorId(Long id);
+
+	/**
+     * Nos permite eliminar una pizza creada anteriormente
+     * @param id
+     */
+	void eliminar(PizzaEntidad pizzaEntidad);
+
+	/**
+     * Nos permite buscar por Id la entidad
+     * @param id
+     */
+	PizzaEntidad bucarEntidad(Long id);
 }

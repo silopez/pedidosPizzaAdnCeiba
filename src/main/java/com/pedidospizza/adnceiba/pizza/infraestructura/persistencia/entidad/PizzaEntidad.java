@@ -26,4 +26,20 @@ public class PizzaEntidad {
 	
 	@Column(name = "valor")
 	private Integer valor;
+	
+	public PizzaEntidad() {}
+	
+	public PizzaEntidad(Long id, String nombre, String tipo, Integer valor) {
+		this.id = id;
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.valor = valor;
+	}
+	
+	public PizzaEntidad(String nombre, String tipo, Integer valor) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.valor = valor;
+	}
+	
 }

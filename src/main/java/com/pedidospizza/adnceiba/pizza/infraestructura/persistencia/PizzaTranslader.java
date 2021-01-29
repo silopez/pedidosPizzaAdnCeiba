@@ -10,15 +10,12 @@ public class PizzaTranslader {
     }
 
     public static PizzaEntidad parsePizzaToEntidad(Pizza pizza) {
-        PizzaEntidad pizzaEntidad = new PizzaEntidad();
-        pizzaEntidad.setNombre(pizza.getNombre());
-        pizzaEntidad.setTipo(pizza.getTipo());
-        pizzaEntidad.setValor(pizza.getValor());
+        PizzaEntidad pizzaEntidad = new PizzaEntidad(pizza.getNombre(), pizza.getTipo(), pizza.getValor());
         return pizzaEntidad;
     }
 
     public static PizzaDto parsePizzaToDto(PizzaEntidad pizzaEntidad) {
         return new PizzaDto(pizzaEntidad.getId(), pizzaEntidad.getNombre(), pizzaEntidad.getTipo(), pizzaEntidad.getValor());
     }
-	
+    
 }

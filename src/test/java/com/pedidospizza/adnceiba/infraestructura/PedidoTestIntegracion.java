@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 
 @ExtendWith(SpringExtension.class)

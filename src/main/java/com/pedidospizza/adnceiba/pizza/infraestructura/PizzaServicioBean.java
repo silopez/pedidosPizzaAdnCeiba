@@ -8,6 +8,7 @@ import com.pedidospizza.adnceiba.pizza.dominio.puerto.PizzaRepositorio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ActualizarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.ConsultarPizzaServicio;
 import com.pedidospizza.adnceiba.pizza.dominio.servicio.CrearPizzaServicio;
+import com.pedidospizza.adnceiba.pizza.dominio.servicio.EliminarPizzaServicio;
 
 @Configuration
 public class PizzaServicioBean {
@@ -24,5 +25,10 @@ public class PizzaServicioBean {
     @Bean
     public ActualizarPizzaServicio actualizarPizzaServicio(PizzaRepositorio pizzaRepositorio) {
         return new ActualizarPizzaServicio(pizzaRepositorio);
+    }
+    
+    @Bean
+    public EliminarPizzaServicio eliminarPizzaServicio(PizzaRepositorio pizzaRepositorio) {
+        return new EliminarPizzaServicio(pizzaRepositorio);
     }
 }

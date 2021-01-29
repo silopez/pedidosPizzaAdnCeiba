@@ -35,8 +35,6 @@ public class PizzaPersistenciaRepositorio implements PizzaRepositorio {
 	@Override
 	public Pizza actualizar(Pizza pizza) {
 		
-		
-		
 		PizzaEntidad pizzaEntidad = entityManager.find(PizzaEntidad.class, pizza.getId());
 		
 		pizzaEntidad.setNombre(pizza.getNombre());
@@ -63,9 +61,16 @@ public class PizzaPersistenciaRepositorio implements PizzaRepositorio {
 		
 		return pizzaEncontrada;
 	}
+	
+	@Override
+	public PizzaEntidad bucarEntidad(Long id) {
+		return entityManager.find(PizzaEntidad.class, id);
+	}
 
 	@Override
-	public void eliminar(Long id) {
-		// TODO Auto-generated method stub
+	public void eliminar(PizzaEntidad pizzaEntidad) {
+		entityManager.remove(pizzaEntidad);
 	}
+	
+	
 }
