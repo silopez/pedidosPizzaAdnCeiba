@@ -6,6 +6,6 @@ INSERT INTO pizzas (id, nombre, tipo, valor) VALUES (1,'Mexicana', 'Deliciosos p
 INSERT INTO pizzas (id, nombre, tipo, valor) VALUES (2,'Hawaiana', 'Deliciosa pizza hawaiana', '45000');
 INSERT INTO pizzas (id, nombre, tipo, valor) VALUES (3,'Vegetariana', 'Deliciosa pizza vegeatiana', '53000');
 
-INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (1,'Silvio Lopez', 'Barrio Cooperativo', '50000','ENTREGADO');
-INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (2,'Roberto Medina', 'Edificio aldana', '45000','ENTREGADO');
-INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (3,'Pablo Perez', 'Edificio cra19', '53000','ENTREGADO');
+INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (1,'Silvio Lopez', 'Barrio Cooperativo', '50000','RECIBIDO');
+INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (2,'Roberto Medina', 'Edificio aldana', '45000','RECIBIDO');
+INSERT INTO pedidos (id, nombre, direccion, total, estado_pedido) VALUES (3,'Pablo Perez', 'Edificio cra19', '53000','RECIBIDO');

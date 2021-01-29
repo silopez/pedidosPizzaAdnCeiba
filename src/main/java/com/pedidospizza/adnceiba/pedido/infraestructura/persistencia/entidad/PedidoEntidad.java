@@ -2,10 +2,14 @@ package com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 @Entity(name = "pedidos")
 @NamedQuery(name="Pedido.obtenerTodos" , query="SELECT ans FROM pedidos ans")
@@ -24,8 +28,9 @@ public class PedidoEntidad {
 	@Column(name = "total")
 	private Integer total;
 	
-	@Column(name = "estadoPedido", length = 50)
-	private String estadoPedido;
+	@Column(name = "estado_pedido", length = 50)
+	@Enumerated(EnumType.STRING)
+	private EstadoPedidoEnum estadoPedido;
 
 	public Long getId() {
 		return id;
@@ -59,11 +64,11 @@ public class PedidoEntidad {
 		this.total = total;
 	}
 
-	public String getEstadoPedido() {
+	public EstadoPedidoEnum getEstadoPedido() {
 		return estadoPedido;
 	}
 
-	public void setEstadoPedido(String estadoPedido) {
+	public void setEstadoPedido(EstadoPedidoEnum estadoPedido) {
 		this.estadoPedido = estadoPedido;
 	}
 }

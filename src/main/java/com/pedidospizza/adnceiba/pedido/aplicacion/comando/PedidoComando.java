@@ -1,5 +1,7 @@
 package com.pedidospizza.adnceiba.pedido.aplicacion.comando;
 
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
+
 import lombok.Getter;
 
 @Getter
@@ -9,11 +11,11 @@ public class PedidoComando {
 	private String nombre;
 	private String direccion;
 	private Integer total;
-	private String estadoPedido;
+	private EstadoPedidoEnum estadoPedido;
 	
 	public PedidoComando() {}
 
-	public PedidoComando(Long id, String nombre, String direccion, Integer total, String estadoPedido) {
+	public PedidoComando(Long id, String nombre, String direccion, Integer total, EstadoPedidoEnum estadoPedido) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 public class PedidoTestDataBuilder {
 
@@ -12,19 +13,19 @@ public class PedidoTestDataBuilder {
     private static final String NOMBRE_TEST1 = "Silvio Lopez";
     private static final String DIRECCION_TEST1 = "Barrio Cooperativo";
     private static final Integer TOTAL_TEST1 = 40000;
-    private static final String ESTADO_TEST1 = "ENTREGADO";
+    private static final EstadoPedidoEnum ESTADO_TEST1 = EstadoPedidoEnum.RECIBIDO;
     
     private static final Long ID_TEST2 = 2L;
     private static final String NOMBRE_TEST2 = "Pedro Lopez";
     private static final String DIRECCION_TEST2 = "Barrio Cooperativo";
     private static final Integer TOTAL_TEST2 = 40000;
-    private static final String ESTADO_TEST2 = "ENTREGADO";
+    private static final EstadoPedidoEnum ESTADO_TEST2 = EstadoPedidoEnum.EN_CAMINO;
     
     private Long id;
     private String nombre;
     private String direccion;
     private Integer total;
-    private String estado;
+    private EstadoPedidoEnum estado;
     
     private List<PedidoDto> listaPedidosDto = new ArrayList<>();
 

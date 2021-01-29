@@ -16,6 +16,8 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
+import com.pedidospizza.adnceiba.testdatabuilder.pedido.PedidoComandoTestDataBuilder;
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -38,13 +40,7 @@ public class PedidoTestIntegracion {
     @Test
     public void crearPedidoTest() throws Exception {
 
-        Long id = 10L;
-        String nombre = "Silvio Lopez";
-        String direccion = "Barrio Ciudad Dorada";
-        Integer total = 15000;
-        String estado = "ENTREGADO";
-
-        PedidoComando pedidoComando = new PedidoComando(id, nombre, direccion, total, estado);
+        PedidoComando pedidoComando = new PedidoComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .post("/pedidos")
                 .content(objectMapper.writeValueAsString(pedidoComando))

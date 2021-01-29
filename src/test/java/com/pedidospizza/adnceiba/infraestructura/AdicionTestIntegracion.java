@@ -39,12 +39,7 @@ public class AdicionTestIntegracion {
     @Test
     public void crearAdicionTest() throws Exception {
 
-        Long id = 10L;
-        String nombre = "Arequipe";
-        String descripcion = "Dulce arequipe";
-        Integer valor = 5000;
-
-        AdicionComando adicionComando = new AdicionComando(id, nombre, descripcion, valor);
+        AdicionComando adicionComando = new AdicionComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .post("/adiciones")
                 .content(objectMapper.writeValueAsString(adicionComando))

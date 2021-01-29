@@ -36,7 +36,7 @@ public class PizzaTestIntegracion {
     }
 
     @Test
-    public void crearPizzaTest() throws Exception {
+    void crearPizzaTest() throws Exception {
 
         PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
@@ -48,7 +48,7 @@ public class PizzaTestIntegracion {
     }
     
     @Test
-    public void listarTodasPizzaTest() throws Exception {
+    void listarTodasPizzaTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
                 .get("/pizzas")
                 .contentType("application/json")
@@ -57,7 +57,7 @@ public class PizzaTestIntegracion {
     }
     
     @Test
-    public void actualizarPizzaTest() throws Exception {
+    void actualizarPizzaTest() throws Exception {
 
         PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
@@ -69,7 +69,7 @@ public class PizzaTestIntegracion {
     }
     
     @Test
-    public void eliminarPizzaTest() throws Exception {
+    void eliminarPizzaTest() throws Exception {
         PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .delete("/pizzas/1")

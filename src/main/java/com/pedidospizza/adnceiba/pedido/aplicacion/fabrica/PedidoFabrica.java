@@ -11,8 +11,4 @@ public class PedidoFabrica {
 	public Pedido crearPedido(PedidoComando pedidoComando) {
         return new Pedido(pedidoComando.getId(), pedidoComando.getNombre(), pedidoComando.getDireccion(), pedidoComando.getTotal(), pedidoComando.getEstadoPedido());
     }
-	
-	public Pedido actualizarPedido(PedidoComando pedidoComando) {
-		return new Pedido(pedidoComando.getId(), pedidoComando.getNombre(), pedidoComando.getDireccion(), pedidoComando.getTotal(), pedidoComando.getEstadoPedido());
-    }
 }
