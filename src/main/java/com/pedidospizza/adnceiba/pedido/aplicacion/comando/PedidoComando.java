@@ -18,12 +18,20 @@ public class PedidoComando {
 	
 	public PedidoComando() {}
 
-	public PedidoComando(Long id, String nombre, String direccion, Integer total, EstadoPedidoEnum estadoPedido, Date fechaPedido2) {
+	public PedidoComando(Long id, String nombre, String direccion, Integer total, EstadoPedidoEnum estadoPedido, Date fechaPedido) {
 		this.id = id;
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.total = total;
 		this.estadoPedido = estadoPedido;
-		this.fechaPedido = fechaPedido2;
+		this.fechaPedido = fechaPedido;
 	}
+
+	public Date getFechaPedido() {
+		return (Date) fechaPedido.clone();
+	}
+	
+	
+	
+	
 }
