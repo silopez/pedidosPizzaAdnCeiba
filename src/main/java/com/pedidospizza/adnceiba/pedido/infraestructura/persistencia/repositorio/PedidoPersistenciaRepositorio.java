@@ -28,7 +28,8 @@ public class PedidoPersistenciaRepositorio implements PedidoRepositorio {
         		pedidoEntidad.getNombre(),
         		pedidoEntidad.getDireccion(),
         		pedidoEntidad.getTotal(),
-        		pedidoEntidad.getEstadoPedido()
+        		pedidoEntidad.getEstadoPedido(),
+        		pedidoEntidad.getFechaPedido()
         );
 	}
 

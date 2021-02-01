@@ -18,6 +18,6 @@ public class PedidoTranslader {
     }
 
     public static PedidoDto parsePedidoToDto(PedidoEntidad pedidoEntidad) {
-        return new PedidoDto(pedidoEntidad.getId(), pedidoEntidad.getNombre(), pedidoEntidad.getDireccion(), pedidoEntidad.getTotal(), pedidoEntidad.getEstadoPedido());
+        return new PedidoDto(pedidoEntidad.getId(), pedidoEntidad.getNombre(), pedidoEntidad.getDireccion(), pedidoEntidad.getTotal(), pedidoEntidad.getEstadoPedido(), pedidoEntidad.getFechaPedido());
     }
 }

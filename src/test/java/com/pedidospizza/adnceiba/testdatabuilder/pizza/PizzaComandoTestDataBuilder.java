@@ -6,7 +6,7 @@ public class PizzaComandoTestDataBuilder {
 	private static final Long ID_TEST1 = 1L;
     private static final String NOMBRE_TEST1 = "Pizza mex";
     private static final String TIPO_TEST1 = "Deliciosa pizza mexicana";
-    private static final Integer VALOR_TEST1 = 50000;
+    private static final Integer VALOR_TEST1 = 11000;
     
     
     private Long id;

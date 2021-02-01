@@ -9,6 +9,6 @@ import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 public class PedidoFabrica {
 	
 	public Pedido crearPedido(PedidoComando pedidoComando) {
-        return new Pedido(pedidoComando.getId(), pedidoComando.getNombre(), pedidoComando.getDireccion(), pedidoComando.getTotal(), pedidoComando.getEstadoPedido());
+        return new Pedido(pedidoComando.getId(), pedidoComando.getNombre(), pedidoComando.getDireccion(), pedidoComando.getTotal(), pedidoComando.getEstadoPedido(), pedidoComando.getFechaPedido());
     }
 }

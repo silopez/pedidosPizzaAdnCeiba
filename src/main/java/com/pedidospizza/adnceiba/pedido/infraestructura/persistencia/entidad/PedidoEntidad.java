@@ -1,5 +1,7 @@
 package com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.entidad;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
@@ -31,6 +35,10 @@ public class PedidoEntidad {
 	@Column(name = "estado_pedido", length = 50)
 	@Enumerated(EnumType.STRING)
 	private EstadoPedidoEnum estadoPedido;
+	
+	@Column(name = "fecha_pedido")
+	@Temporal(TemporalType.DATE)
+    private Date fechaPedido;
 
 	public Long getId() {
 		return id;
@@ -70,5 +78,13 @@ public class PedidoEntidad {
 
 	public void setEstadoPedido(EstadoPedidoEnum estadoPedido) {
 		this.estadoPedido = estadoPedido;
+	}
+
+	public Date getFechaPedido() {
+		return fechaPedido;
+	}
+
+	public void setFechaPedido(Date fechaPedido) {
+		this.fechaPedido = fechaPedido;
 	}
 }

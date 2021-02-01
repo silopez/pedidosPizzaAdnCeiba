@@ -9,12 +9,12 @@ public class PizzaDtoTestDataBuilder {
 	private static final Long ID_TEST1 = 1L;
     private static final String NOMBRE_TEST1 = "Pizza mexicana";
     private static final String TIPO_TEST1 = "Deliciosa pizza mexicana con jalapeños y carne molida";
-    private static final Integer VALOR_TEST1 = 40000;
+    private static final Integer VALOR_TEST1 = 12000;
     
     private static final Long ID_TEST2 = 2L;
     private static final String NOMBRE_TEST2 = "Pizza paisa";
     private static final String TIPO_TEST2 = "Deliciosa pizza con maicitos, maduro y chicharron";
-    private static final Integer VALOR_TEST2 = 40000;
+    private static final Integer VALOR_TEST2 = 13000;
     
     private Long id;
     private String nombre;
