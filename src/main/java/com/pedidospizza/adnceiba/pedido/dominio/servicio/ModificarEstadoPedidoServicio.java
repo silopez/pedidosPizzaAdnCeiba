@@ -3,6 +3,7 @@ package com.pedidospizza.adnceiba.pedido.dominio.servicio;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
 import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoRepositorio;
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
@@ -36,7 +37,9 @@ public class ModificarEstadoPedidoServicio {
     			validarEstadoPedidoCambiar(pedidoEncontrado.getEstadoPedido(), estadoPedido);
     		}
     		
-    		this.pedidoRepositorio.cambiarEstadoPedido(id, estadoPedido);
+    		Pedido pedidoCambiar = new Pedido(pedidoEncontrado.getId(), pedidoEncontrado.getNombre(), pedidoEncontrado.getDireccion(), pedidoEncontrado.getTotal(), estadoPedido, pedidoEncontrado.getFechaPedido());
+    		
+    		this.pedidoRepositorio.actualizar(pedidoCambiar);
     	}
         
     }
@@ -57,7 +60,7 @@ public class ModificarEstadoPedidoServicio {
 		
 		Date fechaActual = new Date();
 		
-		if(fechaSalida.compareTo(fechaActual)>0) {
+		if(fechaSalida.compareTo(fechaActual)<0) {
 			throw new EstadoPedidoCambiarTiempoInvalidoExcepcion(MensajesGeneralesEnum.ESTADO_PEDIDO_CANCELADO_TIEMPO_INVALIDO.getMensaje());
 		}
 		

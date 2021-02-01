@@ -1,6 +1,8 @@
 package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
@@ -11,7 +13,7 @@ public class PedidoComandoTestDataBuilder {
     private static final String DIRECCION_TEST1 = "Barrio Cooperativo";
     private static final Integer TOTAL_TEST1 = 40000;
     private static final EstadoPedidoEnum ESTADO_TEST1 = EstadoPedidoEnum.RECIBIDO;
-    private static final Date FECHA_PEDIDO_TEST1 = new Date();
+    private static final Date FECHA_PEDIDO_TEST1 = new Date();  
     
     private Long id;
     private String nombre;
@@ -33,4 +35,5 @@ public class PedidoComandoTestDataBuilder {
     public PedidoComando build() {
         return new PedidoComando(id, nombre, direccion, total, estado, fechaPedido);
     }
+    
 }

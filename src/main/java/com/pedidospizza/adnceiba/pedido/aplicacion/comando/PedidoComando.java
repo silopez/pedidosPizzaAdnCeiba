@@ -25,13 +25,5 @@ public class PedidoComando {
 		this.total = total;
 		this.estadoPedido = estadoPedido;
 		this.fechaPedido = fechaPedido;
-	}
-
-	public Date getFechaPedido() {
-		return (Date) fechaPedido.clone();
-	}
-	
-	
-	
-	
+	}	
 }

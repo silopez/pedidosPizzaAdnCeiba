@@ -15,7 +15,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
+import com.pedidospizza.adnceiba.testdatabuilder.pedido.DetallePedidoComandoTestDataBuilder;
 import com.pedidospizza.adnceiba.testdatabuilder.pedido.PedidoComandoTestDataBuilder;
 
 @ExtendWith(SpringExtension.class)
@@ -39,10 +41,11 @@ public class PedidoTestIntegracion {
     @Test
     public void crearPedidoTest() throws Exception {
 
-        PedidoComando pedidoComando = new PedidoComandoTestDataBuilder().build();
+    	DetallePedidoComando detallePedidoComando = new DetallePedidoComandoTestDataBuilder().build();
+        //PedidoComando pedidoComando = new PedidoComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .post("/pedidos")
-                .content(objectMapper.writeValueAsString(pedidoComando))
+                .content(objectMapper.writeValueAsString(detallePedidoComando))
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isCreated());

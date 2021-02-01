@@ -38,7 +38,7 @@ public class PedidoPersistenciaDao implements PedidoDao {
 	@Override
 	public PedidoDto getPedidoPorId(Long id) {
 		 Query query = entityManager.createNamedQuery(PEDIDO_ID);
-		 PedidoEntidad pedidoEntidad = (PedidoEntidad) query.getSingleResult();
+		 PedidoEntidad pedidoEntidad = (PedidoEntidad) query.setParameter(1, id).getSingleResult();
 		 return PedidoTranslader.parsePedidoToDto(pedidoEntidad); 
 	}
 }

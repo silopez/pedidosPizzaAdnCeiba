@@ -8,6 +8,11 @@ public class PizzaComandoTestDataBuilder {
     private static final String TIPO_TEST1 = "Deliciosa pizza mexicana";
     private static final Integer VALOR_TEST1 = 11000;
     
+    private static final Long ID_TEST2 = 2L;
+    private static final String NOMBRE_TEST2 = "Pizza mex";
+    private static final String TIPO_TEST2 = "Deliciosa pizza mexicana";
+    private static final Integer VALOR_TEST2 = 11000;
+    
     
     private Long id;
     private String nombre;
@@ -25,5 +30,9 @@ public class PizzaComandoTestDataBuilder {
 
     public PizzaComando build() {
         return new PizzaComando(id, nombre, tipo, valor);
+    }
+    
+    public PizzaComando build2() {
+        return new PizzaComando(ID_TEST2, NOMBRE_TEST2, TIPO_TEST2, VALOR_TEST2);
     }
 }

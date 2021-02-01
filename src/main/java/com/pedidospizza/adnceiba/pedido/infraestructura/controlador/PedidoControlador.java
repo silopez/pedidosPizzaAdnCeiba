@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.ConsultarPedidoManejador;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.CrearPedidoManejador;
@@ -36,8 +37,8 @@ public class PedidoControlador {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Pedido crearPedido(@RequestBody PedidoComando pedidoComando) {
-        return crearPedidoManejador.ejecutar(pedidoComando);
+    public Pedido crearPedido(@RequestBody DetallePedidoComando detallePedidoComando) {
+        return crearPedidoManejador.ejecutar(detallePedidoComando);
     }
 
     @GetMapping

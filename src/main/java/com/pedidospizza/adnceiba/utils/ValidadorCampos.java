@@ -24,10 +24,7 @@ public class ValidadorCampos {
 		Pattern pat = Pattern.compile(EXPRESION_REGULAR_ALFANUMERICOS);
 		Matcher mat = pat.matcher(campoRevisar);
 		Boolean resultado = mat.find();
-        if (resultado) {
-            System.out.println("bueno");
-        }else {
-        	System.out.println("malo " + campoRevisar );
+        if (!resultado) {
         	throw new InvalidoSoloAlfaNumericosExcepcion(mensajeError);
         }
     }

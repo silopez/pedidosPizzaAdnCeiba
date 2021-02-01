@@ -16,7 +16,9 @@ import javax.persistence.TemporalType;
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 @Entity(name = "pedidos")
-@NamedQuery(name="Pedido.obtenerTodos" , query="SELECT ans FROM pedidos ans")
+@NamedQuery(name="Pedido.obtenerTodos" , query="SELECT ped FROM pedidos ped")
+@NamedQuery(name="Pedido.obtenerPorId" , query="SELECT ped FROM pedidos ped WHERE ped.id = ?1")
+@NamedQuery(name="Pedido.actualizarEstado" , query ="UPDATE pedidos ped SET ped.estadoPedido = ?1 WHERE ped.id = ?2")
 public class PedidoEntidad {
 
 	@Id

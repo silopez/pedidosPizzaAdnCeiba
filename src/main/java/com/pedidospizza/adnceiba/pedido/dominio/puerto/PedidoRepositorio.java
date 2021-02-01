@@ -17,7 +17,4 @@ public interface PedidoRepositorio {
      * @param id
      */
     Pedido actualizar(Pedido pedido);
-
-	void cambiarEstadoPedido(Long id, EstadoPedidoEnum estadoPedido);
-
 }

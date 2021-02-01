@@ -46,7 +46,10 @@ public enum MensajesGeneralesEnum {
 	FECHA_PEDIDO_OBLIGATORIO("La fecha del pedido a realizar debe ser obligatorio"), 
 	ESTADO_PEDIDO_CAMBIAR_INVALIDO("El estado pedido al que se desea cambiar es anterior al estado actual"), 
 	ESTADO_PEDIDO_CANCELADO_TIEMPO_INVALIDO("No es posible cancelar este pedido ya que paso el lapso de tiempo"), 
-	ESTADO_PEDIDO_CANCELADO_ENTREGADO_INVALIDO("No es posible cancelar un pedido ya entregado"); 
+	ESTADO_PEDIDO_CANCELADO_ENTREGADO_INVALIDO("No es posible cancelar un pedido ya entregado"),
+	NO_EXISTE_PIZZA_PEDIDO("En el pedido a realizar no hay pizzas, por favor agregue por lo menos una pizza"), 
+	CANTIDAD_INVALIDAD_PIZZA_PEDIDO("Ha excedido la cantidad de pizzas posibles por pedido"), 
+	CANTIDAD_INVALIDADO_ADICION_PIZZA("Ha excedido la cantidad de adiciones para la pizza "); 
 	
 	private final String mensaje;
 	
