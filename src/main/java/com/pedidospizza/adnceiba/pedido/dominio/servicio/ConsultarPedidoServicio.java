@@ -16,4 +16,8 @@ public class ConsultarPedidoServicio {
     public List<PedidoDto> getAllPedidos() {
         return pedidoDao.getPedidos();
     }
+    
+    public PedidoDto getPedidoPorId(Long id) {
+    	return pedidoDao.getPedidoPorId(id);
+    }
 }

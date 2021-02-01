@@ -7,6 +7,7 @@ import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoDao;
 import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoRepositorio;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.ConsultarPedidoServicio;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.CrearPedidoServicio;
+import com.pedidospizza.adnceiba.pedido.dominio.servicio.ModificarEstadoPedidoServicio;
 
 @Configuration
 public class PedidoServicioBean {
@@ -19,5 +20,9 @@ public class PedidoServicioBean {
     @Bean
     public ConsultarPedidoServicio consultarPedidoServicio(PedidoDao pedidoDao) {
         return new ConsultarPedidoServicio(pedidoDao);
+    }
+    
+    @Bean ModificarEstadoPedidoServicio modificarEstadoPedidoServicio(PedidoRepositorio pedidoRepositorio, ConsultarPedidoServicio consultarPedidoServicio) {
+    	return new ModificarEstadoPedidoServicio(pedidoRepositorio, consultarPedidoServicio);
     }
 }

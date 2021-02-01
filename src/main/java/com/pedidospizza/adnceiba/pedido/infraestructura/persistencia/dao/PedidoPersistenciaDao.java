@@ -18,6 +18,7 @@ public class PedidoPersistenciaDao implements PedidoDao {
 
 	private final EntityManager entityManager;
     private static final String PEDIDOS = "Pedido.obtenerTodos";
+    private static final String PEDIDO_ID = "Pedido.obtenerPorId";
 
     public PedidoPersistenciaDao(EntityManager entityManager) {
         this.entityManager = entityManager;
@@ -33,4 +34,11 @@ public class PedidoPersistenciaDao implements PedidoDao {
         }
         return pedidoDtos;
     }
+
+	@Override
+	public PedidoDto getPedidoPorId(Long id) {
+		 Query query = entityManager.createNamedQuery(PEDIDO_ID);
+		 PedidoEntidad pedidoEntidad = (PedidoEntidad) query.getSingleResult();
+		 return PedidoTranslader.parsePedidoToDto(pedidoEntidad); 
+	}
 }

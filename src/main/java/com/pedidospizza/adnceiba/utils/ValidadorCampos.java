@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.pedidospizza.adnceiba.utils.excepciones.CampoObligatorioExcepcion;
-import com.pedidospizza.adnceiba.utils.excepciones.InvalidoMaximoCincuentaCaracteres;
+import com.pedidospizza.adnceiba.utils.excepciones.InvalidoMaximoCincuentaCaracteresExcepcion;
 import com.pedidospizza.adnceiba.utils.excepciones.InvalidoSoloAlfaNumericosExcepcion;
 
 public class ValidadorCampos {
@@ -34,19 +34,19 @@ public class ValidadorCampos {
 	
 	public static void validarTamanioCadena(String campoRevisar, Integer cantidad, String mensajeError) {
 		if(campoRevisar.length()>cantidad) {
-			throw new InvalidoMaximoCincuentaCaracteres(mensajeError);
+			throw new InvalidoMaximoCincuentaCaracteresExcepcion(mensajeError);
 		}
     }
 
 	public static void validarMaximoEntero(Integer valor, Integer maximoValor, String mensajeError) {
 		if(valor>maximoValor) {
-			throw new InvalidoMaximoCincuentaCaracteres(mensajeError);
+			throw new InvalidoMaximoCincuentaCaracteresExcepcion(mensajeError);
 		}
 	}
 	
 	public static void validarMinimoEntero(Integer valor, Integer minimoValor, String mensajeError) {
 		if(valor<minimoValor) {
-			throw new InvalidoMaximoCincuentaCaracteres(mensajeError);
+			throw new InvalidoMaximoCincuentaCaracteresExcepcion(mensajeError);
 		}
 	}
 }

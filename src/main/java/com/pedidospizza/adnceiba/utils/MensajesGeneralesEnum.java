@@ -43,7 +43,10 @@ public enum MensajesGeneralesEnum {
 	TOTAL_PEDIDO_OBLIGATORIO("El valor deL pedido debe ser obligatorio"),
 	
 	ESTADO_PEDIDO_PEDIDO_OBLIGATORIO("El estado del pedido es obligatorio"),
-	FECHA_PEDIDO_OBLIGATORIO("La fecha del pedido a realizar debe ser obligatorio"); 
+	FECHA_PEDIDO_OBLIGATORIO("La fecha del pedido a realizar debe ser obligatorio"), 
+	ESTADO_PEDIDO_CAMBIAR_INVALIDO("El estado pedido al que se desea cambiar es anterior al estado actual"), 
+	ESTADO_PEDIDO_CANCELADO_TIEMPO_INVALIDO("No es posible cancelar este pedido ya que paso el lapso de tiempo"), 
+	ESTADO_PEDIDO_CANCELADO_ENTREGADO_INVALIDO("No es posible cancelar un pedido ya entregado"); 
 	
 	private final String mensaje;
 	

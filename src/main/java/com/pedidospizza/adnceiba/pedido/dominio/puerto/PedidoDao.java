@@ -12,4 +12,6 @@ public interface PedidoDao {
      */
     List<PedidoDto> getPedidos();
 
+	PedidoDto getPedidoPorId(Long id);
+
 }

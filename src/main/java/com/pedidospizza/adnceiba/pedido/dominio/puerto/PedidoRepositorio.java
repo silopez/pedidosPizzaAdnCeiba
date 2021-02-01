@@ -1,6 +1,7 @@
 package com.pedidospizza.adnceiba.pedido.dominio.puerto;
 
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 public interface PedidoRepositorio {
 
@@ -16,5 +17,7 @@ public interface PedidoRepositorio {
      * @param id
      */
     Pedido actualizar(Pedido pedido);
+
+	void cambiarEstadoPedido(Long id, EstadoPedidoEnum estadoPedido);
 
 }

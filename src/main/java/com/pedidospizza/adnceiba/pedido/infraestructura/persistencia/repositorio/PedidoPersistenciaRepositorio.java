@@ -8,6 +8,7 @@ import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoRepositorio;
 import com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.PedidoTranslader;
 import com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.entidad.PedidoEntidad;
+import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 @Repository
 public class PedidoPersistenciaRepositorio implements PedidoRepositorio {
@@ -40,6 +41,12 @@ public class PedidoPersistenciaRepositorio implements PedidoRepositorio {
         entityManager.flush();
 		
 		return null;
+	}
+
+	@Override
+	public void cambiarEstadoPedido(Long id, EstadoPedidoEnum estadoPedido) {
+		
+		
 	}
 
 }
