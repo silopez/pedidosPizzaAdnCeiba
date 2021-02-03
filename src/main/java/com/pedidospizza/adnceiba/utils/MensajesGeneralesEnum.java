@@ -18,6 +18,10 @@ public enum MensajesGeneralesEnum {
 	VALOR_MINIMO_PIZZA("El valor minimo de una pizza es de 10.000"),
 	VALOR_PIZZA_OBLIGATORIO("El valor de la pizza debe ser obligatorio"), 
 	
+	PIZZA_CREADA_EXITOSAMENTE("La pizza se creó con éxito"),
+	PIZZA_ELIMINADA_EXITOSAMENTE ("La pizza se eliminó con éxito"),
+	PIZZA_EDITADA_EXITOSAMENTE ("La pizza se actualizó con éxito"),
+	
 	/*ADICION MENSAJES*/
 	ADICION_NOMBRE_SOLO_VALORES_ALFANUMERICOS("El nombre de la Adición solo deben ser valores alfanumericos"),
 	ADICION_NOMBRE_MAXIMO_CINCUENTA_CARACTERES("El nombre de la adición debe ser maximo 50 caracteres"),
@@ -30,6 +34,10 @@ public enum MensajesGeneralesEnum {
 	VALOR_MAXIMO_ADICION("El valor maximo de una adición es de 10.000"),
 	VALOR_MINIMO_ADICION("El valor minimo de una adición es de 1.000"),
 	VALOR_ADICION_OBLIGATORIO("El valor de la adición debe ser obligatorio"),
+	
+	ADICION_CREADA_EXITOSAMENTE("La adición se creó con éxito"),
+	ADICION_ELIMINADA_EXITOSAMENTE ("La adición se eliminó con éxito"),
+	ADICION_EDITADA_EXITOSAMENTE ("La adición se actualizó con éxito"),
 	
 	/*PEDIDOS MENSAJES*/
 	PEDIDO_NOMBRE_SOLO_VALORES_ALFANUMERICOS("El nombre de la persona que solicita el pedido solo deben ser valores alfanumericos"),
@@ -49,7 +57,9 @@ public enum MensajesGeneralesEnum {
 	ESTADO_PEDIDO_CANCELADO_ENTREGADO_INVALIDO("No es posible cancelar un pedido ya entregado"),
 	NO_EXISTE_PIZZA_PEDIDO("En el pedido a realizar no hay pizzas, por favor agregue por lo menos una pizza"), 
 	CANTIDAD_INVALIDAD_PIZZA_PEDIDO("Ha excedido la cantidad de pizzas posibles por pedido"), 
-	CANTIDAD_INVALIDADO_ADICION_PIZZA("Ha excedido la cantidad de adiciones para la pizza "); 
+	CANTIDAD_INVALIDADO_ADICION_PIZZA("Ha excedido la cantidad de adiciones para la pizza "),
+	
+	PEDIDO_CREADO_EXITOSAMENTE("La pizza se creó con éxito"); 
 	
 	private final String mensaje;
 	

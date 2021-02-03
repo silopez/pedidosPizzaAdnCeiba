@@ -1,8 +1,6 @@
 package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;

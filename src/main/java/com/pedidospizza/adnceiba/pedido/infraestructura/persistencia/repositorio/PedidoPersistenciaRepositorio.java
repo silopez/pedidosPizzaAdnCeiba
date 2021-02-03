@@ -1,7 +1,6 @@
 package com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.repositorio;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
 
@@ -9,16 +8,11 @@ import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoRepositorio;
 import com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.PedidoTranslader;
 import com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.entidad.PedidoEntidad;
-import com.pedidospizza.adnceiba.pizza.dominio.modelo.Pizza;
-import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.PizzaEntidad;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 @Repository
 public class PedidoPersistenciaRepositorio implements PedidoRepositorio {
 
 	private final EntityManager entityManager;
-	
-	private static final String PEDIDO_CANCELADO_UPDATE = "Pedido.actualizarEstado";
 
     public PedidoPersistenciaRepositorio(EntityManager entityManager) {
         this.entityManager = entityManager;

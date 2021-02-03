@@ -1,7 +1,5 @@
 package com.pedidospizza.adnceiba.pedido.dominio.servicio;
 
-import java.util.Iterator;
-
 import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePizzaComando;
@@ -33,15 +31,18 @@ public class CrearPedidoServicio {
     	int totalPedido = 0;
     	
     	for (DetallePizzaComando detallePizzaC : detallePedidoComando.getDetallePizzasComando()) {
-			if(detallePizzaC.getListaAdicionesComando().size()>3) {
+			if(detallePizzaC.getListaAdicionesComando() != null && detallePizzaC.getListaAdicionesComando().size()>3) {
 				throw new CantidadInvalidaAdicionEnPizzaExcepcion(MensajesGeneralesEnum.CANTIDAD_INVALIDADO_ADICION_PIZZA.getMensaje()+ detallePizzaC.getPizzaComando().getNombre());
 			}
 			
 			totalPedido = totalPedido + detallePizzaC.getPizzaComando().getValor();
 			
-			for(AdicionComando adicionC : detallePizzaC.getListaAdicionesComando()) {
-				totalPedido = totalPedido + adicionC.getValor();
+			if(detallePizzaC.getListaAdicionesComando() != null) {
+				for(AdicionComando adicionC : detallePizzaC.getListaAdicionesComando()) {
+					totalPedido = totalPedido + adicionC.getValor();
+				}
 			}
+			
 		}
     	
     	

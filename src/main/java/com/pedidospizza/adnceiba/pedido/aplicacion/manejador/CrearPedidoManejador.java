@@ -5,7 +5,6 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
-import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.fabrica.PedidoFabrica;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.CrearPedidoServicio;
@@ -22,7 +21,7 @@ public class CrearPedidoManejador {
     }
 
     @Transactional
-    public Pedido ejecutar(DetallePedidoComando detallePedidoComando) {
+    public Pedido ejecutar(DetallePedidoComando detallePedidoComando) {	
     	Pedido pedido = pedidoFabrica.crearPedido(detallePedidoComando.getPedidoComando());
         return crearPedidoServicio.crear(pedido, detallePedidoComando);
     }

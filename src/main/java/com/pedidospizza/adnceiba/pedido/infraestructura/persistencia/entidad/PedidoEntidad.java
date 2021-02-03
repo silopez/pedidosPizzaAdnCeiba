@@ -39,7 +39,7 @@ public class PedidoEntidad {
 	private EstadoPedidoEnum estadoPedido;
 	
 	@Column(name = "fecha_pedido")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
     private Date fechaPedido;
 
 	public Long getId() {

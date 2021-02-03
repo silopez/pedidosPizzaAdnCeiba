@@ -16,9 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
-import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
 import com.pedidospizza.adnceiba.testdatabuilder.pedido.DetallePedidoComandoTestDataBuilder;
-import com.pedidospizza.adnceiba.testdatabuilder.pedido.PedidoComandoTestDataBuilder;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

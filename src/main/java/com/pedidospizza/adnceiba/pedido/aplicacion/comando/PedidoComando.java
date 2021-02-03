@@ -5,8 +5,10 @@ import java.util.Date;
 import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class PedidoComando {
 
 	private Long id;

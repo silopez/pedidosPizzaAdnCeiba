@@ -1,7 +1,6 @@
 package com.pedidospizza.adnceiba.pedido.dominio.puerto;
 
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 public interface PedidoRepositorio {
 

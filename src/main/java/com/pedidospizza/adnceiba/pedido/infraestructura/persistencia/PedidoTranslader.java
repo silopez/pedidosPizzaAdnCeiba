@@ -14,6 +14,7 @@ public class PedidoTranslader {
         pedidoEntidad.setDireccion(pedido.getDireccion());
         pedidoEntidad.setTotal(pedido.getTotal());
         pedidoEntidad.setEstadoPedido(pedido.getEstadoPedido());
+        pedidoEntidad.setFechaPedido(pedido.getFechaPedido());
         return pedidoEntidad;
     }
 
