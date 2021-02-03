@@ -87,7 +87,7 @@ public class PizzaControlador {
         response.put(MENSAJE, MensajesGeneralesEnum.PIZZA_EDITADA_EXITOSAMENTE.getMensaje());
         response.put(PIZZA, pizza);
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED); 
+        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK); 
     }
     
     @DeleteMapping("/{id}")

@@ -2,6 +2,8 @@ package com.pedidospizza.adnceiba.adicion.dominio.servicio;
 
 import com.pedidospizza.adnceiba.adicion.dominio.puerto.AdicionRepositorio;
 import com.pedidospizza.adnceiba.adicion.infraestructura.persistencia.entidad.AdicionEntidad;
+import com.pedidospizza.adnceiba.utils.MensajesGeneralesEnum;
+import com.pedidospizza.adnceiba.utils.excepciones.AdicionInexistenteEliminarExcepcion;
 
 public class EliminarAdicionServicio {
 	
@@ -17,6 +19,8 @@ public class EliminarAdicionServicio {
     	
     	if(adicionEntidad != null) {
     		adicionRepositorio.eliminar(adicionEntidad);
+    	}else {
+    		throw new AdicionInexistenteEliminarExcepcion(MensajesGeneralesEnum.ADICION_INEXISTENTE_ELIMINAR.getMensaje());
     	}        
     }
 }

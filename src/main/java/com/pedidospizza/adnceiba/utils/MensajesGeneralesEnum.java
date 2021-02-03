@@ -39,6 +39,8 @@ public enum MensajesGeneralesEnum {
 	ADICION_ELIMINADA_EXITOSAMENTE ("La adición se eliminó con éxito"),
 	ADICION_EDITADA_EXITOSAMENTE ("La adición se actualizó con éxito"),
 	
+	ADICION_INEXISTENTE_ELIMINAR ("No existe adición a eliminar"),
+	
 	/*PEDIDOS MENSAJES*/
 	PEDIDO_NOMBRE_SOLO_VALORES_ALFANUMERICOS("El nombre de la persona que solicita el pedido solo deben ser valores alfanumericos"),
 	PEDIDO_NOMBRE_MAXIMO_CINCUENTA_CARACTERES("El nombre de la persona que solicita el pedido debe ser maximo 50 caracteres"),

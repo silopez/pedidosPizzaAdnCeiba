@@ -89,7 +89,7 @@ public class AdicionControlador {
         response.put(MENSAJE, MensajesGeneralesEnum.ADICION_EDITADA_EXITOSAMENTE.getMensaje());
         response.put(ADICION, adicion);
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED); 
+        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK); 
     	
     }
     
