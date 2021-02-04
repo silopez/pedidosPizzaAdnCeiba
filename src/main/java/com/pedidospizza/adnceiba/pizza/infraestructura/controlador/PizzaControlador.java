@@ -3,8 +3,6 @@ package com.pedidospizza.adnceiba.pizza.infraestructura.controlador;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,8 +37,6 @@ public class PizzaControlador {
     
     private static final String MENSAJE = "mensaje";
     private static final String PIZZA = "pizza";
-    
-    private final static Logger LOGGER =  Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); 
 
     public PizzaControlador(CrearPizzaManejador crearPizzaManejador, ConsultarPizzaManejador consultarPizzaManejador, ActualizarPizzaManejador actualizarPizzaManejador, EliminarPizzaManejador eliminarPizzaManejador) {
         this.crearPizzaManejador = crearPizzaManejador;
@@ -59,7 +55,6 @@ public class PizzaControlador {
         try {
         	pizza = crearPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
-			LOGGER.log(Level.WARNING, e.getMessage());
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -85,7 +80,6 @@ public class PizzaControlador {
         try {
         	pizza = actualizarPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
-			LOGGER.log(Level.WARNING, e.getMessage());
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -104,7 +98,6 @@ public class PizzaControlador {
         try {
         	eliminarPizzaManejador.ejecutar(id);
 		} catch (RuntimeException e) {
-			LOGGER.log(null);
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
