@@ -6,12 +6,10 @@ import com.pedidospizza.adnceiba.pizza.infraestructura.persistencia.entidad.Pizz
 
 public class PizzaTranslader {
 	
-	public PizzaTranslader() {
-    }
+	private PizzaTranslader() {}
 
     public static PizzaEntidad parsePizzaToEntidad(Pizza pizza) {
-        PizzaEntidad pizzaEntidad = new PizzaEntidad(pizza.getNombre(), pizza.getTipo(), pizza.getValor());
-        return pizzaEntidad;
+        return new PizzaEntidad(pizza.getNombre(), pizza.getTipo(), pizza.getValor());
     }
 
     public static PizzaDto parsePizzaToDto(PizzaEntidad pizzaEntidad) {
