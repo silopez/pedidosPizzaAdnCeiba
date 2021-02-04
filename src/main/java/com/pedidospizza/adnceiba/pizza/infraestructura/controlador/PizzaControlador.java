@@ -56,13 +56,13 @@ public class PizzaControlador {
         	pizza = crearPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
 			response.put(MENSAJE, e.getMessage());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
         
         response.put(MENSAJE, MensajesGeneralesEnum.PIZZA_CREADA_EXITOSAMENTE.getMensaje());
         response.put(PIZZA, pizza);
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -81,13 +81,13 @@ public class PizzaControlador {
         	pizza = actualizarPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
 			response.put(MENSAJE, e.getMessage());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
         
         response.put(MENSAJE, MensajesGeneralesEnum.PIZZA_EDITADA_EXITOSAMENTE.getMensaje());
         response.put(PIZZA, pizza);
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK); 
+        return new ResponseEntity<>(response, HttpStatus.OK); 
     }
     
     @DeleteMapping("/{id}")
@@ -99,12 +99,12 @@ public class PizzaControlador {
         	eliminarPizzaManejador.ejecutar(id);
 		} catch (RuntimeException e) {
 			response.put(MENSAJE, e.getMessage());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
         
         response.put(MENSAJE, MensajesGeneralesEnum.PIZZA_ELIMINADA_EXITOSAMENTE.getMensaje());
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK); 
+        return new ResponseEntity<>(response, HttpStatus.OK); 
     	
     	 
     }

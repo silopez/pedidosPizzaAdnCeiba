@@ -4,9 +4,11 @@ import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
 import com.pedidospizza.adnceiba.pedido.infraestructura.persistencia.entidad.PedidoEntidad;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class PedidoTranslader {
 	
-	public PedidoTranslader() {}
 
     public static PedidoEntidad parsePedidoToEntidad(Pedido pedido) {
         PedidoEntidad pedidoEntidad = new PedidoEntidad();
