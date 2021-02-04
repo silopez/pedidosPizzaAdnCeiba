@@ -84,7 +84,7 @@ public class PizzaControlador {
         try {
         	pizza = actualizarPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
-			LOGGER.info(e.getMessage());  // exception is logged
+			LOGGER.info(e.getMessage());
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -103,6 +103,7 @@ public class PizzaControlador {
         try {
         	eliminarPizzaManejador.ejecutar(id);
 		} catch (RuntimeException e) {
+			LOGGER.info(e.getMessage());
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
