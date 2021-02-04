@@ -55,13 +55,13 @@ public class PedidoControlador {
         	pedido = crearPedidoManejador.ejecutar(detallePedidoComando);
 		} catch (RuntimeException e) {
 			response.put(MENSAJE, e.getMessage());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
         
         response.put(MENSAJE, MensajesGeneralesEnum.PEDIDO_CREADO_EXITOSAMENTE.getMensaje());
         response.put(PEDIDO, pedido);
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -78,12 +78,12 @@ public class PedidoControlador {
         	modificarEstadoPedidoManejador.ejecutar(id, estadoPedido);
 		} catch (RuntimeException e) {
 			response.put(MENSAJE, e.getMessage());
-			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
         
         response.put(MENSAJE, MensajesGeneralesEnum.PEDIDO_CREADO_EXITOSAMENTE.getMensaje());
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
     
 }
