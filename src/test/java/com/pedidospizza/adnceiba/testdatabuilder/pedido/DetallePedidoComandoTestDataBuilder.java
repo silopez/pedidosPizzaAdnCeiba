@@ -1,5 +1,6 @@
 package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
@@ -18,5 +19,26 @@ public class DetallePedidoComandoTestDataBuilder {
 	
 	public DetallePedidoComando build() {
 		return new DetallePedidoComando(pedidoComando, listaDetallePizzaComando);
+	}
+	
+	public DetallePedidoComando buildSinPizzas() {
+		
+		List<DetallePizzaComando> listaSinDetallePizzaComando = new ArrayList<DetallePizzaComando>();
+		
+		return new DetallePedidoComando(pedidoComando, listaSinDetallePizzaComando);
+	}
+	
+	public DetallePedidoComando buildDetalleMasCincoPizzas() {
+		
+		List<DetallePizzaComando> listaCincoDetallePizzaComando = new DetallePizzaComandoTestDataBuilder().buildMasDeCincoDetallePizzaComando();
+		
+		return new DetallePedidoComando(pedidoComando, listaCincoDetallePizzaComando);
+	}
+	
+public DetallePedidoComando buildDetalleMasTresDetalles() {
+		
+		List<DetallePizzaComando> listaCincoDetallePizzaComando = new DetallePizzaComandoTestDataBuilder().buildMasDeTresAdicionesDetallePizzaComando();
+		
+		return new DetallePedidoComando(pedidoComando, listaCincoDetallePizzaComando);
 	}
 }

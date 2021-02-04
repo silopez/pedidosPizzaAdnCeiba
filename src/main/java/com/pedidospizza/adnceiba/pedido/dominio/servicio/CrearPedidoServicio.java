@@ -45,9 +45,6 @@ public class CrearPedidoServicio {
 			
 		}
     	
-    	
-    	
-    	
         return this.pedidoRepositorio.crear(pedido);
     }
 }

@@ -55,4 +55,19 @@ public class AdicionComandoTestDataBuilder {
         return listaAdicionComando;
     }
 
+
+	public List<AdicionComando> buildMasTresAdiciones() {
+		AdicionComando adicionComando1 =  new AdicionComando(ID, NOMBRE, DESCRIPCION, VALOR);
+    	AdicionComando adicionComando2 =  new AdicionComando(ID_2, NOMBRE_2, DESCRIPCION_2, VALOR_2);
+    	AdicionComando adicionComando3 =  new AdicionComando(ID_2, NOMBRE_2, DESCRIPCION_2, VALOR_2);
+    	AdicionComando adicionComando4 =  new AdicionComando(ID_2, NOMBRE_2, DESCRIPCION_2, VALOR_2);
+        
+    	listaAdicionComando.add(adicionComando1);
+    	listaAdicionComando.add(adicionComando2);
+    	listaAdicionComando.add(adicionComando3);
+    	listaAdicionComando.add(adicionComando4);
+        
+        return listaAdicionComando;
+	}
+
 }
