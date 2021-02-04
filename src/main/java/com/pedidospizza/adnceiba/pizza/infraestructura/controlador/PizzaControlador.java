@@ -104,7 +104,7 @@ public class PizzaControlador {
         try {
         	eliminarPizzaManejador.ejecutar(id);
 		} catch (RuntimeException e) {
-			LOGGER.log(Level.WARNING, e.getMessage());
+			LOGGER.log(null);
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
