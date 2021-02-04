@@ -3,6 +3,7 @@ package com.pedidospizza.adnceiba.pizza.infraestructura.controlador;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,8 @@ public class PizzaControlador {
     private final ActualizarPizzaManejador actualizarPizzaManejador;
     private final EliminarPizzaManejador eliminarPizzaManejador;
     
+    private static final Logger LOGGER = Logger.getLogger(PizzaControlador.class.getName());
+    
     private static final String MENSAJE = "mensaje";
     private static final String PIZZA = "pizza";
 
@@ -55,6 +58,7 @@ public class PizzaControlador {
         try {
         	pizza = crearPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
+			LOGGER.info(e.getMessage()); 
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -80,6 +84,7 @@ public class PizzaControlador {
         try {
         	pizza = actualizarPizzaManejador.ejecutar(pizzaComando);
 		} catch (RuntimeException e) {
+			LOGGER.info(e.getMessage());  // exception is logged
 			response.put(MENSAJE, e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}

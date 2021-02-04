@@ -7,7 +7,7 @@ import com.pedidospizza.adnceiba.utils.excepciones.CampoObligatorioExcepcion;
 import com.pedidospizza.adnceiba.utils.excepciones.InvalidoMaximoCincuentaCaracteresExcepcion;
 import com.pedidospizza.adnceiba.utils.excepciones.InvalidoSoloAlfaNumericosExcepcion;
 
-public class ValidadorCampos {
+public final class ValidadorCampos {
 	
 	private static final String EXPRESION_REGULAR_ALFANUMERICOS = "^[a-zA-Z\\ ·ÈÌÛ˙¡…Õ”⁄Ò—\\s]*$";
 	

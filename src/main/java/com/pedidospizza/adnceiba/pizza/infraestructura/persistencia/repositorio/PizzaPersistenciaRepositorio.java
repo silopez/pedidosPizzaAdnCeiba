@@ -57,9 +57,7 @@ public class PizzaPersistenciaRepositorio implements PizzaRepositorio {
 	public PizzaDto bucarPorId(Long id) {
 		PizzaEntidad pizzaEntidadEncontrada = entityManager.find(PizzaEntidad.class, id);
 		
-		PizzaDto pizzaEncontrada = PizzaTranslader.parsePizzaToDto(pizzaEntidadEncontrada);
-		
-		return pizzaEncontrada;
+		return PizzaTranslader.parsePizzaToDto(pizzaEntidadEncontrada);
 	}
 	
 	@Override
