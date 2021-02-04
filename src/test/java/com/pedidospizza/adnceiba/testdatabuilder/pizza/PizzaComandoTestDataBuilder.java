@@ -13,6 +13,11 @@ public class PizzaComandoTestDataBuilder {
     private static final String TIPO_TEST2 = "Deliciosa pizza mexicana";
     private static final Integer VALOR_TEST2 = 11000;
     
+    private static final Long ID_3 = 3L;
+    private static final String NOMBRE_3 = "Queso dos con mas de cincuenta caractes para que salga la excepcion";
+    private static final String TIPO_3 = "Delicioso queso parmesano  ";
+    private static final Integer VALOR_3 = 5000;
+    
     
     private Long id;
     private String nombre;
@@ -34,5 +39,9 @@ public class PizzaComandoTestDataBuilder {
     
     public PizzaComando build2() {
         return new PizzaComando(ID_TEST2, NOMBRE_TEST2, TIPO_TEST2, VALOR_TEST2);
+    }
+    
+    public PizzaComando buildExcepcion() {
+        return new PizzaComando(ID_3, NOMBRE_3, TIPO_3, VALOR_3);
     }
 }

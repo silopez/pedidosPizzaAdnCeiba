@@ -24,6 +24,11 @@ public class PedidoTestDataBuilder {
     private static final EstadoPedidoEnum ESTADO_TEST2 = EstadoPedidoEnum.EN_CAMINO;
     private static final Date FECHA_PEDIDO_TEST2 = new Date();
     
+    private static final String NOMBRE_NO_ALFANUMERICO = "pEDRO$%#";
+    private static final String NOMBRE_TAMANIO_5O = "Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez";
+    private static final String DIRECCION_TAMANIO_250 = "Pedro Lopez Pedro Lopez Pedro Lopez Pedro LPedro Lopez Pedro Lopez Pedro Lopez Pedro LPedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez Pedro Lopez";
+    private static final Integer TOTAL_MINIMO = 1000;
+    
     private Long id;
     private String nombre;
     private String direccion;
@@ -56,4 +61,38 @@ public class PedidoTestDataBuilder {
         
         return listaPedidosDto;
     }
+
+	public Pedido buildNulloNombre() {
+		return new Pedido(id, null, direccion, total, estado, fechaPedido);		
+	}
+
+	public Pedido buildNulloDireccion() {
+		return new Pedido(id, nombre, null, total, estado, fechaPedido);
+	}
+
+	public Pedido buildNulloTotal() {
+		return new Pedido(id, nombre, direccion, null, estado, fechaPedido);
+	}
+
+	public Pedido buildNulloEstadoPedido() {
+		return new Pedido(id, nombre, direccion, total, null, fechaPedido);
+	}
+
+	public Pedido buildNoAlfanumericoNombre() {
+		return new Pedido(id, NOMBRE_NO_ALFANUMERICO, direccion, total, estado, fechaPedido);
+	}
+
+	public Pedido buildTamanioNombre() {
+		return new Pedido(id, NOMBRE_TAMANIO_5O, direccion, total, estado, fechaPedido);		
+	}
+
+
+	public Pedido buildTamanioDireccion() {
+		return new Pedido(id, nombre, DIRECCION_TAMANIO_250, total, estado, fechaPedido);
+	}
+
+
+	public Pedido buildValorMinimo() {
+		return new Pedido(id, nombre, direccion, TOTAL_MINIMO, estado, fechaPedido);
+	}
 }

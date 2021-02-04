@@ -83,7 +83,7 @@ public class PedidoControlador {
         
         response.put(MENSAJE, MensajesGeneralesEnum.PEDIDO_CREADO_EXITOSAMENTE.getMensaje());
         
-        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
+        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
     }
     
 }

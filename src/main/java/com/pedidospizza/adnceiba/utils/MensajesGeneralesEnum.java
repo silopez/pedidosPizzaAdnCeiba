@@ -22,6 +22,8 @@ public enum MensajesGeneralesEnum {
 	PIZZA_ELIMINADA_EXITOSAMENTE ("La pizza se eliminó con éxito"),
 	PIZZA_EDITADA_EXITOSAMENTE ("La pizza se actualizó con éxito"),
 	
+	PIZZA_INEXISTENTE_ELIMINAR("No existe pizza a eliminar"),
+	
 	/*ADICION MENSAJES*/
 	ADICION_NOMBRE_SOLO_VALORES_ALFANUMERICOS("El nombre de la Adición solo deben ser valores alfanumericos"),
 	ADICION_NOMBRE_MAXIMO_CINCUENTA_CARACTERES("El nombre de la adición debe ser maximo 50 caracteres"),

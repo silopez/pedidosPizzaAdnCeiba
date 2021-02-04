@@ -48,12 +48,36 @@ public class PizzaTestIntegracion {
     }
     
     @Test
+    public void crearPizzaExcepcionTest() throws Exception {
+
+        PizzaComando pizzaComando = new PizzaComandoTestDataBuilder().buildExcepcion();
+        mockMvc.perform( MockMvcRequestBuilders
+                .post("/pizzas")
+                .content(objectMapper.writeValueAsString(pizzaComando))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
+    }
+    
+    @Test
     void listarTodasPizzaTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
                 .get("/pizzas")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void actualizarPizzaExcepcionTest() throws Exception {
+
+        PizzaComando pizza = new PizzaComandoTestDataBuilder().buildExcepcion();
+        mockMvc.perform( MockMvcRequestBuilders
+                .put("/pizzas")
+                .content(objectMapper.writeValueAsString(pizza))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
     }
     
     @Test
@@ -66,6 +90,17 @@ public class PizzaTestIntegracion {
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void eliminarPizzasExcepcionTest() throws Exception {
+        PizzaComando pizza = new PizzaComandoTestDataBuilder().build();
+        mockMvc.perform( MockMvcRequestBuilders
+                .delete("/pizzas/5")
+                .content(objectMapper.writeValueAsString(pizza))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
     }
     
     @Test

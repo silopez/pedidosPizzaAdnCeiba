@@ -7,7 +7,7 @@ import com.pedidospizza.adnceiba.adicion.aplicacion.comando.AdicionComando;
 
 public class AdicionComandoTestDataBuilder {
 	
-	private static final Long ID = 1L;
+	private static final Long ID = 3L;
     private static final String NOMBRE = "Queso";
     private static final String DESCRIPCION = "Delicioso queso parmesano";
     private static final Integer VALOR = 5000;
@@ -16,6 +16,11 @@ public class AdicionComandoTestDataBuilder {
     private static final String NOMBRE_2 = "Queso dos";
     private static final String DESCRIPCION_2 = "Delicioso queso parmesano";
     private static final Integer VALOR_2 = 5000;
+    
+    private static final Long ID_3 = 3L;
+    private static final String NOMBRE_3 = "Queso dos con mas de cincuenta caractes para que salga la excepcion";
+    private static final String DESCRIPCION_3 = "Delicioso queso parmesano  ";
+    private static final Integer VALOR_3 = 5000;
     
     private Long id;
     private String nombre;
@@ -34,7 +39,11 @@ public class AdicionComandoTestDataBuilder {
 
     public AdicionComando build() {
         return new AdicionComando(id, nombre, descricion, valor);
-    } 
+    }
+    
+    public AdicionComando buildExcepcion() {
+        return new AdicionComando(ID_3, NOMBRE_3, DESCRIPCION_3, VALOR_3);
+    }
     
     public List<AdicionComando> buildAllAdicionComando() {
     	AdicionComando adicionComando =  new AdicionComando(ID, NOMBRE, DESCRIPCION, VALOR);

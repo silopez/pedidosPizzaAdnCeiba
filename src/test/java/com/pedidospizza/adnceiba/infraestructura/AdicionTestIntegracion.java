@@ -49,12 +49,36 @@ public class AdicionTestIntegracion {
     }
     
     @Test
+    public void crearAdicionExcepcionTest() throws Exception {
+
+        AdicionComando adicionComando = new AdicionComandoTestDataBuilder().buildExcepcion();
+        mockMvc.perform( MockMvcRequestBuilders
+                .post("/adiciones")
+                .content(objectMapper.writeValueAsString(adicionComando))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
+    }
+    
+    @Test
     public void listarTodasAdicionTest() throws Exception {
     	mockMvc.perform( MockMvcRequestBuilders
                 .get("/adiciones")
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void actualizarAdicionExcepcionTest() throws Exception {
+
+        AdicionComando adicion = new AdicionComandoTestDataBuilder().buildExcepcion();
+        mockMvc.perform( MockMvcRequestBuilders
+                .put("/adiciones")
+                .content(objectMapper.writeValueAsString(adicion))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
     }
     
     @Test
@@ -70,7 +94,7 @@ public class AdicionTestIntegracion {
     }
     
     @Test
-    public void eliminarPizzaTest() throws Exception {
+    public void eliminarAdicionesTest() throws Exception {
         AdicionComando adicion = new AdicionComandoTestDataBuilder().build();
         mockMvc.perform( MockMvcRequestBuilders
                 .delete("/adiciones/1")
@@ -78,5 +102,16 @@ public class AdicionTestIntegracion {
                 .contentType("application/json")
                 .accept("application/json"))
                 .andExpect(status().isOk());
+    }
+    
+    @Test
+    public void eliminarAdicionesExcepcionTest() throws Exception {
+        AdicionComando adicion = new AdicionComandoTestDataBuilder().build();
+        mockMvc.perform( MockMvcRequestBuilders
+                .delete("/adiciones/5")
+                .content(objectMapper.writeValueAsString(adicion))
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isInternalServerError());
     }
 }

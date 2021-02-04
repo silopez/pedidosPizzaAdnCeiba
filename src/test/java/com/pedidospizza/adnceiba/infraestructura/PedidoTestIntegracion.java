@@ -57,4 +57,13 @@ public class PedidoTestIntegracion {
                 .accept("application/json"))
                 .andExpect(status().isOk());
     }
+    
+    @Test
+    public void actualizarEstadoTest() throws Exception {
+    	mockMvc.perform( MockMvcRequestBuilders
+                .put("/pedidos/1/ENTREGADO")
+                .contentType("application/json")
+                .accept("application/json"))
+                .andExpect(status().isOk());
+    }
 }
