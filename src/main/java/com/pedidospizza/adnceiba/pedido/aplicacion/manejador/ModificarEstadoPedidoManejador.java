@@ -4,8 +4,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Component;
 
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.ModificarEstadoPedidoServicio;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 
 @Component

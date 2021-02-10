@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
 import com.pedidospizza.adnceiba.pedido.dominio.puerto.PedidoRepositorio;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.ConsultarPedidoServicio;
 import com.pedidospizza.adnceiba.pedido.dominio.servicio.ModificarEstadoPedidoServicio;
 import com.pedidospizza.adnceiba.testdatabuilder.pedido.PedidoDtoTestDataBuilder;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.utils.MensajesGeneralesEnum;
 
 public class PedidoFechaCancelarTest {

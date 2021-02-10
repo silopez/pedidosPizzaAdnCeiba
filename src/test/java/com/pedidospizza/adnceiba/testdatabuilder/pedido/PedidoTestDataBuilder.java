@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 public class PedidoTestDataBuilder {
 

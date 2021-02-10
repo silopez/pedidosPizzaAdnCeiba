@@ -20,9 +20,9 @@ import com.pedidospizza.adnceiba.pedido.aplicacion.comando.DetallePedidoComando;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.ConsultarPedidoManejador;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.CrearPedidoManejador;
 import com.pedidospizza.adnceiba.pedido.aplicacion.manejador.ModificarEstadoPedidoManejador;
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.Pedido;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.utils.MensajesGeneralesEnum;
 
 @CrossOrigin(origins = {"http://localhost:4200"})

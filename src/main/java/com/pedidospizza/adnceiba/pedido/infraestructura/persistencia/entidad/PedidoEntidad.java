@@ -13,7 +13,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 
 @Entity(name = "pedidos")
 @NamedQuery(name="Pedido.obtenerTodos" , query="SELECT ped FROM pedidos ped")

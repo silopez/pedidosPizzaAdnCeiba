@@ -2,7 +2,7 @@ package com.pedidospizza.adnceiba.pedido.dominio.modelo;
 
 import java.util.Date;
 
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 
 import lombok.Getter;
 

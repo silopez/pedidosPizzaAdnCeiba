@@ -3,7 +3,7 @@ package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 import java.util.Date;
 
 import com.pedidospizza.adnceiba.pedido.aplicacion.comando.PedidoComando;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 
 public class PedidoComandoTestDataBuilder {
 	private static final Long ID_TEST1 = 1L;

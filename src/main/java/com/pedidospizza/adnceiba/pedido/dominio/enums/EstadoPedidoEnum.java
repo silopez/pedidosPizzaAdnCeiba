@@ -1,4 +1,4 @@
-package com.pedidospizza.adnceiba.utils;
+package com.pedidospizza.adnceiba.pedido.dominio.enums;
 
 import lombok.Getter;
 

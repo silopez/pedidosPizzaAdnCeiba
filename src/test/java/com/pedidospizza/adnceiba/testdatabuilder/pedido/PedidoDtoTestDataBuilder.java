@@ -2,8 +2,8 @@ package com.pedidospizza.adnceiba.testdatabuilder.pedido;
 
 import java.util.Date;
 
+import com.pedidospizza.adnceiba.pedido.dominio.enums.EstadoPedidoEnum;
 import com.pedidospizza.adnceiba.pedido.dominio.modelo.PedidoDto;
-import com.pedidospizza.adnceiba.utils.EstadoPedidoEnum;
 
 public class PedidoDtoTestDataBuilder {
 
